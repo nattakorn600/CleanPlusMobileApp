@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<services:CustomShell
+    x:Class="cleanplus.AdminShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:admin="clr-namespace:cleanplus.Views.Admin"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    BackgroundColor="#178da4"
+    Shell.ForegroundColor="#1793A8">
+
+    <TabBar>
+        <ShellContent
+            Title="ตรวจสอบ"
+            ContentTemplate="{DataTemplate admin:AdminHomePage}"
+            Icon="admincheck.png"
+            Route="AdminHomePage" />
+        <ShellContent
+            Title="แชท"
+            ContentTemplate="{DataTemplate admin:AdminChatPage}"
+            Icon="adminchat.png"
+            Route="AdminChatPage" />
+        <ShellContent
+            Title="ออเดอร์"
+            ContentTemplate="{DataTemplate admin:AdminOrderPage}"
+            Icon="adminorder.png"
+            Route="AdminOrderPage" />
+    </TabBar>
+
+
+</services:CustomShell>

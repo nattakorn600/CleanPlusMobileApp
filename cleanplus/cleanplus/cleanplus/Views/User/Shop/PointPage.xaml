@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Shop.PointPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="0.07*,*">
+            <Frame
+                Grid.Row="0"
+                Padding="25,7,25,0"
+                BackgroundColor="White"
+                HasShadow="False">
+                <Grid>
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="CleanPlus Points"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="Start"
+                        Source="leftarrow.png"
+                        VerticalOptions="Center"
+                        WidthRequest="25" />
+                </Grid>
+            </Frame>
+            <StackLayout Grid.Row="1">
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="15"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="พอยท์ทั้งหมด"
+                        TextColor="Black" />
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="20"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="200"
+                        TextColor="#1793A8" />
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="10"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="ลูกค้าจะได้สินค้าในการทำความสะอาดครั้งต่อไป"
+                        TextColor="Black" />
+                </StackLayout>
+                <BoxView
+                    Margin="0,0,-50,0"
+                    HeightRequest="10">
+                    <BoxView.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="#E9E9E9" />
+                            <GradientStop Offset="1" Color="White" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+
+                <StackLayout
+                    Margin="40,0"
+                    Orientation="Horizontal">
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="17"
+                        HorizontalOptions="StartAndExpand"
+                        Text="รางวัล"
+                        TextColor="Black" />
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="17"
+                        HorizontalOptions="End"
+                        Text="แลก"
+                        TextColor="Black" />
+                </StackLayout>
+
+                <CollectionView
+                    x:Name="Point"
+                    SelectionMode="None">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Grid
+                                    Margin="20,10,20,0"
+                                    ColumnDefinitions="70,25,25,25,*,30,30"
+                                    RowDefinitions="10,20,10,20,5">
+                                    <Image
+                                        Grid.Row="0"
+                                        Grid.RowSpan="5"
+                                        Grid.Column="0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Source="{Binding Image}"
+                                        VerticalOptions="FillAndExpand" />
+
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="1"
+                                        Grid.ColumnSpan="4"
+                                        Padding="-1"
+                                        FontFamily="Sarabun-Light"
+                                        FontSize="12"
+                                        Text="{Binding Title}"
+                                        TextColor="Black" />
+
+                                    <Label
+                                        Grid.Row="3"
+                                        Grid.Column="1"
+                                        Padding="-1"
+                                        FontFamily="Sarabun-Light"
+                                        FontSize="12"
+                                        Text="ราคา"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="3"
+                                        Grid.Column="2"
+                                        Padding="-1"
+                                        FontFamily="Sarabun-Light"
+                                        FontSize="12"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Text="{Binding Price}"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="3"
+                                        Grid.Column="3"
+                                        Padding="-1"
+                                        FontFamily="Sarabun-Light"
+                                        FontSize="12"
+                                        Text="฿"
+                                        TextColor="Black" />
+
+                                    <Button
+                                        Grid.Row="1"
+                                        Grid.RowSpan="3"
+                                        Grid.Column="5"
+                                        Grid.ColumnSpan="2"
+                                        Padding="3.5"
+                                        BackgroundColor="#1793A8"
+                                        CornerRadius="20"
+                                        FontFamily="Sarabun-Light"
+                                        FontSize="8"
+                                        HeightRequest="22"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Text="{Binding Price}"
+                                        TextColor="#EFE163"
+                                        VerticalOptions="CenterAndExpand"
+                                        WidthRequest="35" />
+                                </Grid>
+                                <BoxView
+                                    Margin="20,0"
+                                    BackgroundColor="#D7D7D7"
+                                    HeightRequest="2" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

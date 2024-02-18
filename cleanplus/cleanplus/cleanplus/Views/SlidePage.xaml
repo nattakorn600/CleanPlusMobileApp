@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage
+    x:Class="cleanplus.Views.SlidePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:cleanplus.Views"
+    xmlns:local1="clr-namespace:cleanplus.Views.Register">
+    <local:FirstPage />
+    <local1:LoginPage />
+</CarouselPage>

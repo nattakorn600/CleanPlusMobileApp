@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Help.QuestionPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    Shell.BackgroundColor="White"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame
+                Grid.Row="0"
+                Padding="25,7,25,0"
+                BackgroundColor="White"
+                HasShadow="False">
+                <Grid>
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="คำถามที่พบบ่อย"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="Start"
+                        Source="leftarrow.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+                </Grid>
+            </Frame>
+            <Grid Grid.Row="1" RowDefinitions="10,*">
+                <BoxView
+                    Grid.Row="0"
+                    Margin="0,0,-50,0"
+                    HeightRequest="10">
+                    <BoxView.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="#E9E9E9" />
+                            <GradientStop Offset="1" Color="#fffefe" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+
+                <ScrollView
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    VerticalScrollBarVisibility="Never">
+                    <StackLayout Margin="25,20,25,20">
+
+                        <Label
+                            Margin="0,0,0,20"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            Text="หากท่านมีข้อสงสัยเกี่ยวกับบริการของคลีน พลัส ลองเข้ามาตรวจสอบในส่วนนี้ เพราะอาจมีคำตอบที่ท่าน ต้องการทราบ หรือแม้ไม่มีข้อสงสัย ท่านสามารถเข้ามาอ่านเพื่อเป็นความรู้ได้"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            FontSize="13"
+                            Text="1.เกี่ยวกับ Clean plus"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,20"
+                            FontSize="12"
+                            Text="บริษัท คลีน พลัส  ให้บริการทำความสะอาดทุกพื้นที่ภายในบริเวณที่พักและบ้าน บริการรับทำความสะอาดแบบครบวงจร ปัจจุบัน คลีน พลัส มีความเชี่ยวชาญงานด้านทำความสะอาดอย่างยิ่ง และทีมงานทุกคนนั้นผ่านการฝึกอบรมการใช้งานอุปกรณ์ทำความสะอาด น้ำยาชนิดต่างๆ จนเชี่ยวชาญ และประสบการณ์จากการปฏิบัติงานจริง และได้ให้บริการทำความสะอาดสถานที่มาแล้วมากมาย บริษัทฯ ยึดหลักการบริการเพื่อให้เป็นที่พึงพอใจ สูงสุดแก่ลูกค้า มีการจัดการเพื่อเตรียมความพร้อม ทั้งด้านพนักงาน วัสดุอุปกรณ์ เครื่องมือ เครื่องใช้ทันสมัยอีกด้วยด้วยเครื่องมือและเทคโนโลยีที่ทันสมัยให้บริการด้วยการรับรองคุณภาพของพนักงานที่มืออาชีพ ที่ผ่านการอบรมทั้งทฤษฎีและปฏิบัติ"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            FontSize="13"
+                            Text="2. แอปพลิเคชั่น Clean plus มีค่าบริการหรือไม่"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,20"
+                            FontSize="12"
+                            Text="แอปพลิเคชั่น Clean plus สามารถดาวโหลดได้ฟรี (ยกเว้นค่าบริการที่เรียกเก็บจากผู้ให้บริการ)"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            FontSize="13"
+                            Text="3. Clean plus คือแอปพลิเคชั่นอะไร"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,20"
+                            FontSize="12"
+                            Text="เป็นแอปพลิเคชั่นจัดหาแม่บ้านออนไลน์หรือบริษัทรับจ้างทำความสะอาด มีการนัดหมายตามวันเวลาได้ตามความการของลูกค้า โดยแม่บ้านมืออาชีพที่ผ่านการอบรมมาอย่างดี มีความชำนาญ มีประสบการณ์ และมีประกันความเสียหาย อีกทั้งยังนำอุปกรณ์คุณภาพสูงและทันสมัย ครอบคลุมพื้นที่เพชรบูรณ์ อำเภอเมือง เท่านั้น เริ่มต้น ….."
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+
+                        <Label
+                            FontSize="13"
+                            Text="4. ติดต่อ บริษัท ได้ทางไหนบ้าง?"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            FontSize="12"
+                            Text="- เฟซบุ๊ก : Clean plusบริการจ้างแม่บ้านทำความสะอาด"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,20"
+                            Text="- อีเมล : Cleanplus@email.com"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+
+                        <Label
+                            FontSize="13"
+                            Text="5. วิธีการดาวน์โหลด Mobile Application ทำอย่างไร"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,20"
+                            FontSize="12"
+                            Text="สามารถดาวน์โหลดได้ที่ Google Play"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+
+                        <Label
+                            FontSize="13"
+                            Text="6. เมื่อลืมรหัสล็อคอิน PIN 6 หลัก ต้องทำอย่างไร"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,20"
+                            FontSize="12"
+                            Text="กดที่ลืมรหัส PIN ระบบจะให้ท่านกรอกอีเมลที่ท่านลงทะเบียนไว้เพื่อทำการเปลี่ยนรหัสผ่านใหม่อีกครั้งผ่านอีเมลของท่าน"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+
+                        <Label
+                            FontSize="13"
+                            Text="7.ไม่สามารถดาวน์โหลด Application ได้ ควรดำเนินการอย่างไร"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            FontSize="12"
+                            Text="- ตรวจสอบการเชื่อมต่ออินเตอร์เน็ตอุปกรณ์ของคุณ"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,30"
+                            FontSize="12"
+                            Text="- ตรวจสอบพื้นที่ว่างในการจัดเก็บหน่วยความจำอุปกรณ์ของคุณ"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                    </StackLayout>
+                </ScrollView>
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

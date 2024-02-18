@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<services:CustomShell
+    x:Class="cleanplus.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    xmlns:user="clr-namespace:cleanplus.Views.User"
+    BackgroundColor="#178da4"
+    Shell.ForegroundColor="#1793A8">
+
+    <TabBar>
+        <ShellContent
+            Title="หน้าหลัก"
+            ContentTemplate="{DataTemplate user:HomePage}"
+            Icon="home.png"
+            Route="HomePage" />
+        <ShellContent
+            Title="โปรไฟล์"
+            ContentTemplate="{DataTemplate user:ProfilePage}"
+            Icon="user.png"
+            Route="ProfilePage" />
+        <ShellContent
+            Title="การจอง"
+            ContentTemplate="{DataTemplate user:BookingPage}"
+            Icon="booking.png"
+            Route="BookingPage" />
+    </TabBar>
+
+</services:CustomShell>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Empoyee.EmpCerPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#fffefe"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame
+                Grid.Row="0"
+                Padding="25,7,25,0"
+                BackgroundColor="White"
+                HasShadow="False">
+                <Grid>
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="พนักงานของเรา"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="End"
+                        Source="cancel.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+                </Grid>
+            </Frame>
+
+            <Grid Grid.Row="1" RowDefinitions="10,*">
+                <BoxView
+                    Grid.Row="0"
+                    Margin="0,0,-50,0"
+                    HeightRequest="10">
+                    <BoxView.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="#E9E9E9" />
+                            <GradientStop Offset="1" Color="#fffefe" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+
+
+                <StackLayout Grid.Row="1" Margin="25,30,25,30">
+                    <Frame
+                        Padding="1"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        HeightRequest="500">
+                        <Image x:Name="CerImage" Aspect="Fill" />
+                    </Frame>
+                </StackLayout>
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

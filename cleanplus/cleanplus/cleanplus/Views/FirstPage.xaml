@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.FirstPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="false">
+
+    <Grid>
+        <CarouselView
+            x:Name="BackgroundIntro"
+            IndicatorView="indicatorView"
+            IsBounceEnabled="False"
+            Loop="False">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Image
+                            Aspect="AspectFill"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                   Property=Height}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                  Property=Width}"
+                            Source="{Binding background}" />
+
+                        <Image
+                            Aspect="AspectFill"
+                            BackgroundColor="{Binding color}"
+                            Opacity="0.2"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                   Property=Height}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                  Property=Width}" />
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="0,0,0,130">
+                            <Image
+                                Margin="0,0,0,50"
+                                Opacity="{Binding opacity}"
+                                Source="{Binding image}"
+                                WidthRequest="{Binding width}" />
+                            <StackLayout Grid.Row="1" Orientation="Vertical">
+                                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="14"
+                                        Text="Clean Plus"
+                                        TextColor="#18b7be" />
+                                    <Label
+                                        FontSize="14"
+                                        Text="{Binding text1}"
+                                        TextColor="#fff" />
+                                </StackLayout>
+
+                                <Label
+                                    FontSize="14"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="{Binding text2}"
+                                    TextColor="#fff" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView
+            x:Name="indicatorView"
+            Margin="0,0,0,30"
+            HorizontalOptions="CenterAndExpand"
+            IndicatorColor="#ffffff"
+            IndicatorSize="9"
+            IndicatorsShape="Circle"
+            SelectedIndicatorColor="#18b7be"
+            VerticalOptions="End" />
+    </Grid>
+
+</ContentPage>

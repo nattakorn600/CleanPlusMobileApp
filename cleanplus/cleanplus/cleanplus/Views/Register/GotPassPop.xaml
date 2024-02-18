@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    x:Class="cleanplus.Views.Register.GotPassPop"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    CloseWhenBackgroundIsClicked="False"
+    NavigationPage.HasNavigationBar="False">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Right"
+            PositionOut="Right"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+    <ContentPage.Content>
+
+        <StackLayout
+            Padding="20,10,20,10"
+            BackgroundColor="#FFF"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Center"
+            WidthRequest="330">
+
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Label
+                    FontSize="15"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="ลืมรหัสผ่าน ?"
+                    TextColor="#000" />
+                <ImageButton
+                    BackgroundColor="Transparent"
+                    Clicked="Cancel"
+                    HorizontalOptions="EndAndExpand"
+                    Source="cancel.png"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="22" />
+            </Grid>
+
+            <Label
+                x:Name="showstatus"
+                FontSize="12"
+                HorizontalOptions="CenterAndExpand"
+                Text="กรุณาระบุอีเมลของคุณ"
+                TextColor="#000" />
+
+            <services:CustomEntry
+                Margin="0,15,0,10"
+                BorderColor="#000"
+                CornerRadius="45" FontSize="12"
+                HeightRequest="50"
+                HorizontalOptions="CenterAndExpand"
+                Placeholder="อีเมล"
+                PlaceholderColor="#000"
+                Text="{Binding Email}"
+                TextColor="#000"
+                WidthRequest="280" />
+
+            <Button 
+                BackgroundColor="#18b7be"
+                Clicked="BtnSend"
+                CornerRadius="45"
+                FontSize="12"
+                HeightRequest="40"
+                HorizontalOptions="CenterAndExpand"
+                Text="ส่ง"
+                TextColor="#000"
+                WidthRequest="85">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#178da4" />
+                        <GradientStop Offset="1" Color="#18b7be" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</pages:PopupPage>

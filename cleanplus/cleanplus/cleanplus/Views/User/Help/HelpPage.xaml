@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Help.HelpPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    Shell.BackgroundColor="White"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame
+                Grid.Row="0"
+                Padding="25,7,25,0"
+                BackgroundColor="White"
+                HasShadow="False">
+                <Grid>
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="ศูนย์ช่วยเหลือ"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="OnCancelClick"
+                        HorizontalOptions="End"
+                        Source="cancel.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+                </Grid>
+            </Frame>
+
+            <Grid Grid.Row="1" BackgroundColor="White">
+                <Grid RowDefinitions="10,*">
+                    <BoxView
+                        Grid.Row="0"
+                        Margin="0,0,-50,0"
+                        HeightRequest="10">
+                        <BoxView.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0" Color="#E9E9E9" />
+                                <GradientStop Offset="1" Color="White" />
+                            </LinearGradientBrush>
+                        </BoxView.Background>
+                    </BoxView>
+
+                    <Grid
+                        Grid.Row="1"
+                        Margin="30,0,20,0"
+                        ColumnDefinitions="30"
+                        RowDefinitions="50,50,50,50">
+                        <Image
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            HorizontalOptions="CenterAndExpand"
+                            Source="questionmark.png"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="25" />
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="15,5,0,0"
+                            FontSize="12"
+                            HorizontalOptions="StartAndExpand"
+                            Text="คำถามที่พบบ่อย"
+                            TextColor="#000"
+                            TextDecorations="Underline"
+                            VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ToQuestion" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Image
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            HorizontalOptions="CenterAndExpand"
+                            Source="lock.png"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="25" />
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="15,5,0,0"
+                            FontSize="12"
+                            HorizontalOptions="StartAndExpand"
+                            Text="นโยบายความเป็นส่วนตัว"
+                            TextColor="#000"
+                            TextDecorations="Underline"
+                            VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ToPrivate" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Image
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            HorizontalOptions="CenterAndExpand"
+                            Source="conditions.png"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="25" />
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="15,5,0,0"
+                            FontSize="12"
+                            HorizontalOptions="StartAndExpand"
+                            Text="เงื่อนไขและข้อตกลง"
+                            TextColor="#000"
+                            TextDecorations="Underline"
+                            VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ToAgree" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Image
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            HorizontalOptions="CenterAndExpand"
+                            Source="conditions.png"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="25" />
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="15,5,0,0"
+                            FontSize="12"
+                            HorizontalOptions="StartAndExpand"
+                            Text="กฎระเบียบข้อบังคับพนักงาน"
+                            TextColor="#000"
+                            TextDecorations="Underline"
+                            VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ToRule" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+
+                    <Grid
+                        Grid.Row="2"
+                        Margin="25,0,0,0"
+                        VerticalOptions="Start">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            Margin="20,0,0,0"
+                            FontSize="13"
+                            Text="ติดต่อเราได้ที่"
+                            TextColor="#000"
+                            VerticalOptions="Center" />
+
+                        <Frame
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Padding="8"
+                            BackgroundColor="#17b3bc"
+                            CornerRadius="100"
+                            HorizontalOptions="CenterAndExpand"
+                            IsClippedToBounds="True"
+                            VerticalOptions="Center"
+                            WidthRequest="25">
+                            <Image
+                                HorizontalOptions="Center"
+                                Source="operatoravatar.png"
+                                VerticalOptions="Center" />
+                        </Frame>
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            FontSize="12"
+                            HorizontalOptions="StartAndExpand"
+                            Text="Chat with Clean Plus"
+                            TextColor="#000"
+                            TextDecorations="Underline"
+                            VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ToChat" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Frame
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Padding="8"
+                            BackgroundColor="#f8d5eb"
+                            CornerRadius="100"
+                            HeightRequest="25"
+                            HorizontalOptions="CenterAndExpand"
+                            IsClippedToBounds="True"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="25">
+                            <Image
+                                HeightRequest="25"
+                                HorizontalOptions="CenterAndExpand"
+                                Source="mail.png"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="25" />
+                        </Frame>
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            FontSize="12"
+                            HorizontalOptions="StartAndExpand"
+                            Text="CleanPlus@email.com"
+                            TextColor="#000"
+                            TextDecorations="Underline"
+                            VerticalOptions="Center" />
+
+                        <Frame
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Padding="8"
+                            BackgroundColor="#f8f5d5"
+                            CornerRadius="100"
+                            HeightRequest="25"
+                            HorizontalOptions="CenterAndExpand"
+                            IsClippedToBounds="True"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="25">
+                            <Image
+                                HeightRequest="20"
+                                HorizontalOptions="CenterAndExpand"
+                                Source="telephone.png"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="20" />
+                        </Frame>
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            FontSize="12"
+                            HorizontalOptions="StartAndExpand"
+                            Text="089-504-3640"
+                            TextColor="#000"
+                            TextDecorations="Underline"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

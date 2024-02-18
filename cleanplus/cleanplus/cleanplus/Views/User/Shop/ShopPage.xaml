@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Shop.ShopPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="55,10,*">
+            <Grid
+                Padding="25,7,25,0"
+                ColumnDefinitions="30,*,30"
+                VerticalOptions="CenterAndExpand">
+                <ImageButton
+                    BackgroundColor="Transparent"
+                    Clicked="BackButton"
+                    HorizontalOptions="StartAndExpand"
+                    Source="leftarrow.png"
+                    WidthRequest="25" />
+
+                <Frame
+                    Grid.Column="1"
+                    Padding="5,5,15,5"
+                    BackgroundColor="#F5F5F5"
+                    CornerRadius="40"
+                    HasShadow="False"
+                    HeightRequest="25">
+                    <StackLayout Orientation="Horizontal">
+                        <services:CustomEntryUnderline
+                            x:Name="SearchText"
+                            ClearButtonVisibility="WhileEditing"
+                            FontSize="14"
+                            HeightRequest="20"
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="ค้นหาสินค้า"
+                            PlaceholderColor="#2E2E2E" />
+                        <ImageButton
+                            BackgroundColor="Transparent"
+                            Clicked="SearchBut"
+                            Source="loupe.png"
+                            WidthRequest="15" />
+                    </StackLayout>
+                </Frame>
+
+                <ImageButton
+                    Grid.Column="2"
+                    Padding="4"
+                    BackgroundColor="Transparent"
+                    Clicked="ShoppingCart"
+                    HorizontalOptions="EndAndExpand"
+                    Source="shoppingcart.png"
+                    WidthRequest="30" />
+                <Frame
+                    x:Name="CountItem"
+                    Grid.Column="2"
+                    Margin="0,2"
+                    Padding="1"
+                    BackgroundColor="Red"
+                    CornerRadius="100"
+                    HeightRequest="10"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    WidthRequest="10">
+                    <Label
+                        x:Name="CountItemNumber"
+                        FontSize="7"
+                        HorizontalTextAlignment="Center"
+                        Text="0"
+                        TextColor="White"
+                        VerticalTextAlignment="Center" />
+                </Frame>
+            </Grid>
+
+            <BoxView
+                Grid.Row="1"
+                Margin="0,0,-50,0"
+                HeightRequest="10">
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#E9E9E9" />
+                        <GradientStop Offset="1" Color="White" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+
+            <CollectionView
+                x:Name="Shop"
+                Grid.Row="2"
+                SelectionMode="None">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Grid
+                                Margin="20,10,20,0"
+                                ColumnDefinitions="50,25,25,25,*,10,30"
+                                RowDefinitions="10,20,10,20,5">
+                                <Image
+                                    Grid.Row="0"
+                                    Grid.RowSpan="5"
+                                    Grid.Column="0"
+                                    HorizontalOptions="FillAndExpand"
+                                    Source="{Binding Image}"
+                                    VerticalOptions="FillAndExpand" />
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.RowSpan="2"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="4"
+                                    Padding="-1"
+                                    FontFamily="Sarabun-Light"
+                                    FontSize="10"
+                                    Text="{Binding Title}"
+                                    TextColor="Black" />
+
+                                <Label
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    Padding="-1"
+                                    FontFamily="Sarabun-Light"
+                                    FontSize="10"
+                                    Text="ราคา"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="3"
+                                    Grid.Column="2"
+                                    Padding="-1"
+                                    FontFamily="Sarabun-Light"
+                                    FontSize="10"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="{Binding Price}"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="3"
+                                    Grid.Column="3"
+                                    Padding="-1"
+                                    FontFamily="Sarabun-Light"
+                                    FontSize="10"
+                                    Text="฿"
+                                    TextColor="Black" />
+
+                                <Button
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    Grid.Column="6" 
+                                    Padding="3.5"
+                                    BackgroundColor="#1793A8"
+                                    Clicked="SelectItemClick"
+                                    CommandParameter="{Binding Id}"
+                                    CornerRadius="20"
+                                    FontFamily="Sarabun-Light"
+                                    FontSize="9"
+                                    HeightRequest="23"
+                                    Text="ซื้อ"
+                                    TextColor="#EFE163"
+                                    VerticalOptions="CenterAndExpand" />
+                            </Grid>
+                            <BoxView
+                                Margin="20,0"
+                                BackgroundColor="#D7D7D7"
+                                HeightRequest="2" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

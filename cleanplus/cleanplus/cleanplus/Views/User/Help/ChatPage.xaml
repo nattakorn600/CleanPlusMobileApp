@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Help.ChatPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    Shell.BackgroundColor="White"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame
+                Grid.Row="0"
+                Padding="25,7,25,0"
+                BackgroundColor="White"
+                HasShadow="False">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="Start"
+                        Source="leftarrow.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+                    <StackLayout
+                        Grid.Column="1"
+                        Margin="-15,0,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                        <Frame
+                            Padding="5"
+                            BackgroundColor="#17b3bc"
+                            CornerRadius="50"
+                            HeightRequest="25"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            WidthRequest="25">
+                            <Image Source="operatoravatar.png" />
+                        </Frame>
+                        <Label
+                            FontFamily="Sarabun-Regular"
+                            FontSize="15"
+                            Text="Chat with Clean Plus"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+                    </StackLayout>
+
+                </Grid>
+            </Frame>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="#eaeaea"
+                RowDefinitions="*,50">
+
+                <!--  Chat Message  -->
+
+                <ScrollView
+                    x:Name="Scroll"
+                    Grid.Row="0"
+                    BackgroundColor="#eaeaea">
+                    <StackLayout
+                        x:Name="MessItem"
+                        Grid.Row="1"
+                        Margin="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                            </Grid.ColumnDefinitions>
+                            <Frame
+                                Grid.Column="0"
+                                Margin="0,0,0,6"
+                                Padding="5"
+                                BackgroundColor="#17b3bc"
+                                CornerRadius="100"
+                                HeightRequest="25"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="StartAndExpand"
+                                WidthRequest="25">
+                                <Image HorizontalOptions="Center" Source="operatoravatar.png" />
+                            </Frame>
+
+                            <Frame
+                                Grid.Column="1"
+                                Margin="0,0,0,6"
+                                Padding="10"
+                                CornerRadius="10"
+                                HorizontalOptions="StartAndExpand"
+                                VerticalOptions="StartAndExpand">
+                                <Label
+                                    FontSize="12"
+                                    HorizontalOptions="Start"
+                                    Text="สวัสดีค่ะ Clean plus ยินดีให้บริการ"
+                                    TextColor="#000"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <Frame
+                                Grid.Column="1"
+                                Margin="0,0,0,6"
+                                Padding="10"
+                                CornerRadius="10"
+                                HorizontalOptions="StartAndExpand"
+                                VerticalOptions="StartAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label
+                                        FontSize="12"
+                                        HorizontalOptions="Start"
+                                        Text="แชทกับเราหรือกด"
+                                        TextColor="#000"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="12"
+                                        HorizontalOptions="Start"
+                                        Text="คำถามที่พบบ่อย"
+                                        TextColor="#000"
+                                        TextDecorations="Underline"
+                                        VerticalOptions="Center">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="ToQuestion" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </ScrollView>
+
+                <!--  Send Message  -->
+
+
+            </Grid>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="#FFF"
+                HeightRequest="55"
+                VerticalOptions="EndAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="45" />
+                </Grid.ColumnDefinitions>
+
+                <services:CustomEntryUnderline
+                    x:Name="textMessage"
+                    Grid.Column="0"
+                    Margin="20,0,10,0"
+                    FontSize="12"
+                    Placeholder="พิมพ์ข้อความได้เลย"
+                    PlaceholderColor="#000"
+                    TextColor="#000" />
+
+                <ImageButton
+                    Grid.Column="1"
+                    Margin="0,5,20,0"
+                    BackgroundColor="Transparent"
+                    Clicked="SendMessage"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="sent.png"
+                    VerticalOptions="CenterAndExpand" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

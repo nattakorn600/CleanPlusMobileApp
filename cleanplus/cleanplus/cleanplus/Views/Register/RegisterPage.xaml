@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.Register.RegisterPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:custom="clr-namespace:cleanplus.Controls"
+    BackgroundColor="#FFF"
+    NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout
+            Margin="30,0,30,0"
+            BackgroundColor="White"
+            HorizontalOptions="FillAndExpand"
+            Spacing="20"
+            VerticalOptions="CenterAndExpand">
+            <Label
+                Margin="0,0,0,20"
+                FontSize="20"
+                HorizontalOptions="CenterAndExpand"
+                Text="ลงทะเบียน"
+                TextColor="#000" />
+            <custom:CustomEntry
+                BorderColor="#000"
+                CornerRadius="45"
+                HeightRequest="50" FontSize="14"
+                Placeholder="ชื่อผู้ใช้"
+                PlaceholderColor="#000"
+                Text="{Binding Name}"
+                TextColor="#000" />
+            <custom:CustomEntry
+                BorderColor="#000"
+                CornerRadius="45"
+                HeightRequest="50" FontSize="14"
+                Placeholder="Email"
+                PlaceholderColor="#000"
+                Text="{Binding Email}"
+                TextColor="#000" />
+            <custom:CustomEntry
+                BorderColor="#000"
+                CornerRadius="45"
+                HeightRequest="50" FontSize="14"
+                IsPassword="True"
+                Placeholder="รหัสผ่าน"
+                PlaceholderColor="#000"
+                Text="{Binding Password}"
+                TextColor="#000" />
+            <custom:CustomEntry
+                BorderColor="#000"
+                CornerRadius="45"
+                HeightRequest="50"
+                Keyboard="Telephone" FontSize="14"
+                Placeholder="เบอร์โทรศัพท์"
+                PlaceholderColor="#000"
+                Text="{Binding Phone}"
+                TextColor="#000" />
+
+            <Button
+                Margin="0,20,0,0"
+                BackgroundColor="#18b7be"
+                Clicked="OnRegisterClick"
+                CornerRadius="45"
+                FontSize="14"
+                HeightRequest="50"
+                Text="ลงทะเบียน"
+                TextColor="#000">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#178da4" />
+                        <GradientStop Offset="1" Color="#18b7be" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <StackLayout
+                Margin="0,20,0,0"
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Horizontal">
+                <Label
+                    HorizontalOptions="EndAndExpand"
+                    Text="เป็นสมาชิกอยู่แล้ว?" FontSize="12"
+                    TextColor="#000" />
+                <Label
+                    HorizontalOptions="StartAndExpand"
+                    Text="เข้าสู่ระบบ" FontSize="12"
+                    TextColor="#51a9ba"
+                    TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ToLogin" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

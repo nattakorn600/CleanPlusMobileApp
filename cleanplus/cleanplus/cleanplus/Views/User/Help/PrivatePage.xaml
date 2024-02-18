@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Help.PrivatePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    Shell.BackgroundColor="White"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame
+                Grid.Row="0"
+                Padding="25,7,25,0"
+                BackgroundColor="White"
+                HasShadow="False">
+                <Grid>
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="นโยบายความเป็นส่วนตัว"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="Start"
+                        Source="leftarrow.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+                </Grid>
+            </Frame>
+            <Grid Grid.Row="1" RowDefinitions="10,*">
+                <BoxView
+                    Grid.Row="0"
+                    Margin="0,0,-50,0"
+                    HeightRequest="10">
+                    <BoxView.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="#E9E9E9" />
+                            <GradientStop Offset="1" Color="#fffefe" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+
+                <Label
+                    Grid.Row="1"
+                    Margin="25,20,25,20"
+                    FontSize="12"
+                    Text="นโยบายความเป็นส่วนตัวของ คลีน พลัส เข้าใจข้อมูลใด ๆ ที่ระบุตัวตนของลูกค้าซึ่ง ข้อมูลดังกล่าวมีความสําคัญสูงสุด ดังนั้น บริษัท จึงกําหนดนโยบายความเป็นส่วนตัว ต่อไปนี้สําหรับการจัดการและการปกป้องข้อมูลส่วนบุคคลการเปิดเผยข้อมูลส่วนบุคคล บริษัท คลีน พลัส จะไม่เปิดเผยข้อมูลประจําตัวส่วนบุคคลของคุณให้กับบุคคลที่สามโดย ไม่ได้รับความยินยอมจากคุณล่วงหน้า บริษัท อาจแบ่งปันเฉพาะข้อมูลส่วนบุคคลที่ เกี่ยวข้องกับงาน บริษัท อาจแบ่งปันผู้ให้บริการบุคคลที่สามของเราซึ่งรวมถึง แต่ไม่ จํากัด เฉพาะผู้ที่ให้บริการประมวลผลบัตรเครดิตการชําระเงินหรือผู้ให้บริการอีเมลเป็น ต้น บริษัท จะไม่เปิดเผยข้อมูลส่วนบุคคลของคุณแก่บุคคลที่สามเว้นแต่จะกําหนดไว้ภาย ใต้ กฎหมายหรือโดยหน่วยงานบังคับใช้ของรัฐบาลหรือ เพื่อปกป้องสิทธิ์ในทรัพย์สินและ ความปลอดภัยของพนักงานของ บริษัท ในกรณีที่มีการโอนการรวบรวมและซื้อกิจการ การขายสินทรัพย์หรือการกู้ยืม บริษัท อาจจําเป็นต้องเปิดเผยข้อมูลบางอย่างแก่ผู้ที่ เกี่ยวข้องกับธุรกรรมดังกล่าวตามนั้น"
+                    TextColor="#000"
+                    VerticalOptions="Start" />
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

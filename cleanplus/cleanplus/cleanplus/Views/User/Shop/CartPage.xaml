@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Shop.CartPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="55,*">
+            <Frame
+                Padding="25,7,25,0"
+                BackgroundColor="White"
+                HasShadow="False">
+                <Grid>
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="ตระกร้าสินค้า"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="Start"
+                        Source="leftarrow.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+                </Grid>
+            </Frame>
+
+
+            <Grid Grid.Row="1" RowDefinitions="*,45">
+                <CollectionView
+                    x:Name="Cart"
+                    Grid.Row="0"
+                    SelectionMode="None">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Grid
+                                    Margin="20,10,20,0"
+                                    ColumnDefinitions="50,25,25,25,*,30,30"
+                                    RowDefinitions="10,20,10,20,5">
+                                    <Image
+                                        Grid.Row="0"
+                                        Grid.RowSpan="5"
+                                        Grid.Column="0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Source="{Binding Image}"
+                                        VerticalOptions="FillAndExpand" />
+
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="1"
+                                        Grid.ColumnSpan="4"
+                                        Padding="-1"
+                                        FontFamily="Sarabun-Light"
+                                        FontSize="10"
+                                        Text="{Binding Title}"
+                                        TextColor="Black" />
+
+                                    <Label
+                                        Grid.Row="3"
+                                        Grid.Column="1"
+                                        Padding="-1"
+                                        FontFamily="Sarabun-Light"
+                                        FontSize="10"
+                                        Text="ราคา"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="3"
+                                        Grid.Column="2"
+                                        Padding="-1"
+                                        FontFamily="Sarabun-Light"
+                                        FontSize="10"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Text="{Binding Price}"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="3"
+                                        Grid.Column="3"
+                                        Padding="-1"
+                                        FontFamily="Sarabun-Light"
+                                        FontSize="10"
+                                        Text="฿"
+                                        TextColor="Black" />
+
+
+                                    <Frame
+                                        Grid.Row="1"
+                                        Grid.RowSpan="3"
+                                        Grid.Column="5"
+                                        Grid.ColumnSpan="2"
+                                        Padding="3.5"
+                                        BackgroundColor="#1793A8"
+                                        CornerRadius="20"
+                                        HeightRequest="15"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        WidthRequest="30">
+                                        <Label
+                                            FontFamily="Sarabun-Light"
+                                            FontSize="9"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding Price}"
+                                            TextColor="#EFE163"
+                                            VerticalTextAlignment="Center" />
+                                    </Frame>
+                                </Grid>
+                                <BoxView
+                                    Margin="20,0"
+                                    BackgroundColor="#D7D7D7"
+                                    HeightRequest="2" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Button
+                    x:Name="SumPriceButton"
+                    Grid.Row="1"
+                    BackgroundColor="#2c96ac"
+                    Clicked="BuyProduct"
+                    FontFamily="Sarabun"
+                    FontSize="13"
+                    HeightRequest="55"
+                    Text="ซื้อสินค้า 0 ฿ "
+                    TextColor="White"
+                    VerticalOptions="End" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

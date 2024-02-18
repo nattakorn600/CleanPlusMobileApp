@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Notify.AlertPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="50,*">
+            <Grid Grid.Row="0" ColumnDefinitions="35,*,55">
+                <Label
+                    Grid.Column="1"
+                    FontFamily="Sarabun-Regular"
+                    FontSize="15"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="การแจ้งเตือน"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <ImageButton
+                    Grid.Column="2"
+                    BackgroundColor="Transparent"
+                    Clicked="CancelClick"
+                    HorizontalOptions="StartAndExpand"
+                    Source="cancel.png"
+                    WidthRequest="20" />
+            </Grid>
+
+            <StackLayout
+                x:Name="HideNoti"
+                Grid.Row="1"
+                Margin="30"
+                Padding="30"
+                HeightRequest="200"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <services:CustomFrame
+                    Padding="1"
+                    CornerRadius="50"
+                    HasShadow="True"
+                    HeightRequest="70">
+                    <Label
+                        FontFamily="Sarabun-Light"
+                        FontSize="15"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="ยังไม่มีรายการ"
+                        TextColor="#565555"
+                        VerticalOptions="CenterAndExpand" />
+                </services:CustomFrame>
+            </StackLayout>
+
+            <ScrollView x:Name="HideNotify" Grid.Row="1">
+                <CollectionView x:Name="Carts" SelectionMode="None">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="20,10" Orientation="Vertical">
+                                <services:CustomFrame CornerRadius="15" HasShadow="True" Padding="5">
+                                    <Grid ColumnDefinitions="*,25" ColumnSpacing="0">
+                                        <ImageButton Grid.Column="1" Source="cancel.png" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Padding="3" Scale="1.1" BackgroundColor="Transparent"/>
+                                        <Grid Padding="10">
+                                            <Label
+                                            FontFamily="Sarabun-Light"
+                                            FontSize="10"
+                                            Text="{Binding Title}"
+                                            TextColor="Black" />
+                                        <Button
+                                            BackgroundColor="Transparent"
+                                            Clicked="NotiClick"
+                                            CommandParameter="{Binding Noti_Id}"
+                                            IsEnabled="{Binding VisableComment}" />
+                                    </Grid> 
+                                    </Grid>
+                                    
+                                </services:CustomFrame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

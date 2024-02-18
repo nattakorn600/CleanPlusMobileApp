@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Help.AgreementPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    Shell.BackgroundColor="Black"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame
+                Grid.Row="0"
+                Padding="25,7,25,0"
+                BackgroundColor="White"
+                HasShadow="False">
+                <Grid>
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="เงื่อนไขและข้อตกลง"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="Start"
+                        Source="leftarrow.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+                </Grid>
+            </Frame>
+
+            <Grid Grid.Row="1" RowDefinitions="10,*">
+                <BoxView
+                    Grid.Row="0"
+                    Margin="0,0,-50,0"
+                    HeightRequest="10">
+                    <BoxView.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="#E9E9E9" />
+                            <GradientStop Offset="1" Color="#fffefe" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+
+                <ScrollView
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    VerticalScrollBarVisibility="Never">
+                    <StackLayout Margin="25,20,25,20">
+
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="12"
+                            Text="1. การให้บริการเป็นการบริการตามจำนวนชั่วโมงที่จอง และขนาดของที่พัก หากในแต่ละครั้งคุณลูกค้าต้องการเพิ่มจำนวนชั่วโมงในการใช้บริการ หรือสั่งซื้อผลิตภัณฑ์ของทางบริษัท บริษัทจะคิดค่าบริการเพิ่มตามจำนวนของรายการนั้นๆ"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="12"
+                            Text="2. สำหรับบริการทำความสะอาดผู้ให้บริการจะเป็นผู้จัดเตรียมอุปกรณ์ และผลิตภัณฑ์ทำความสะอาดไปให้บริการ ลักษณะของงานให้บริการเป็นการทำความสะอาดทั่วไป"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="12"
+                            Text="3. กรณีที่ผู้ให้บริการไปถึงสถานที่ให้บริการ ตาม วัน-เวลาที่นัดหมายแล้ว แต่ไม่สามารถเข้าให้บริการได้ เนื่องจากผู้ใช้บริการผิดนัด หรือ ผู้ใช้บริการต้องการยกเลิกนัดหมาย ต้องยกเลิกล่วงหน้า 3 ชั่วโมง ก่อนถึงเวลานัด ทางบริษัทขอสวนสิทธิ์ ไม่คืนค่าบริการไม่ว่ากรณีใดๆ"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="12"
+                            Text="4. คลีน พลัส มีประกันในคุ้มครอง ในกรณีผู้ให้บริการทำทรัพย์สินของคุณลูกค้าเสียหาย แตกหัก ระหว่างในการให้บริการผ่านแอพพลิเคชั่น บริษัทเรามีประกันคุ้มครองเฉพาะกรณีความเสียหาย (แต่ไม่คุ้มครองทรัพย์สินสูญหายทุกกรณี ดังนั้นคุณลูกค้าจะต้องไม่ทิ้งสิ่งมีค่าใดๆไว้ในพื้นที่ให้บริการ)"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="12"
+                            Text="5. เงื่อนไขในการประกัน สำหรับบริการต่างๆ"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            FontSize="12"
+                            Text="- บริการทำความสะอาด วงเงินประกันสูงสุดไม่เกิน 10,000 บาท"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="12"
+                            Text="6. คลีน พลัส รับประกันผลงานและความพึงพอใจในการให้บริการ กรณีที่ทำความสะอาดเกิดมีจุดบกพร่อง สามารถแจ้งให้ผู้ให้บริการแก้ไขจุดบกพร่องนั้นได้ หรือติดต่อทางบริษัทพร้อมส่งข้อมูลที่เกิดจุดบกพร่อง (ภายใน 24 ชั่วโมงนับจากเวลานัดหมาย) เพื่อทางบริษัทจะได้เข้าไปแก้ไข โดยไม่มีค่าใช้จ่ายเพิ่ม"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+
+                        <Label
+                            Margin="0,10,0,10"
+                            FontSize="12"
+                            Text="การลงทะเบียนและบัญชีผู้ใช้"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="12"
+                            Text="บริษัท ขอสงวนสิทธิ์เฉพาะบริการสำหรับผู้ใช้ที่ลงทะเบียนเพื่อสร้างบัญชีบนแอปพลิเคชั่นของ บริษัท ผู้ใช้ดังกล่าวจะสามารถซื้อสินค้าและใช้บริการและกิจกรรมที่มีให้ในแอปพลิเคชั่น เช่นการสั่งซื้อสินค้า เป็นต้นเมื่อคุณสร้างบัญชีคุณยอมรับสิ่งต่อไปนี้"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,5"
+                            FontSize="12"
+                            Text="- ผู้ใช้หนึ่งคนสามารถลงทะเบียนด้วยบัญชีเดียวเท่านั้น"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <Label
+                            Margin="0,0,0,30"
+                            FontSize="12"
+                            Text="- คุณตกลงที่จะให้ข้อมูลโดยละเอียดที่จำเป็นเพื่อให้ถูกต้องและเป็นปัจจุบัน ข้อกำหนดและเงื่อนไขของแอปพลิเคชั่น บริษัท ขอสงวนสิทธิ์ตามดุลยพินิจ แต่เพียงผู้เดียวในการเพิกถอนการเป็นสมาชิกของคุณทันทีโดยไม่ต้องแจ้งให้ทราบล่วงหน้าหาก บริษัท พบว่าคุณได้กระทำการใด ๆ ต่อไปนี้: คุณให้ข้อมูลเท็จในการลงทะเบียนรวมถึงการไม่ปรับปรุงข้อมูลให้เป็นปัจจุบัน การค้นพบการใช้งานบัญชีของคุณโดยบุคคลอื่น การดำเนินการใด ๆ ผ่านบัญชีของคุณซึ่งเป็นการละเมิดข้อกำหนดการใช้งานภายใต้ข้อกำหนดในการให้บริการและเงื่อนไขอื่น ๆ การกระทำใด ๆ ที่กระทำผ่านบัญชีของคุณโดยไม่ปฏิบัติตามกฎหมายหรือศีลธรรมอันดีของประชาชนหรือเป็นการฉ้อโกง"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    BackgroundColor="#FFF"
+    Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="50,*">
+            <Frame Grid.Row="0" Padding="0">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#178CA4" />
+                        <GradientStop Offset="1" Color="#18B7BE" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+
+                <Label
+                    FontFamily="Sarabun"
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"
+                    Text="โปรไฟล์"
+                    TextColor="White"
+                    VerticalTextAlignment="Center" />
+            </Frame>
+
+            <ScrollView Grid.Row="1">
+                <StackLayout
+                    Margin="0,10,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="400">
+                    <ImageButton
+                        Margin="0,10,0,10"
+                        BackgroundColor="Transparent"
+                        Clicked="BtnPointClick"
+                        HorizontalOptions="CenterAndExpand"
+                        Source="point.png"
+                        WidthRequest="75" />
+
+                    <services:CustomFrame
+                        Margin="0,8,0,8"
+                        Padding="25,8,15,12"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="300">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="ชื่อ" TextColor="#000" />
+                                <ImageButton
+                                    x:Name="btnName"
+                                    Padding="3"
+                                    BackgroundColor="Transparent"
+                                    Clicked="btnNameClick"
+                                    HorizontalOptions="EndAndExpand"
+                                    Source="pen.png"
+                                    VerticalOptions="StartAndExpand"
+                                    WidthRequest="20" />
+                            </StackLayout>
+
+                            <Label
+                                x:Name="labName"
+                                IsVisible="true"
+                                Text="Clean Plus"
+                                TextColor="#000" />
+                            <Entry
+                                x:Name="entName"
+                                Margin="-4,-10,0,-11"
+                                FontSize="14"
+                                IsVisible="false"
+                                Text="Clean Plus"
+                                TextColor="#000" />
+                        </StackLayout>
+                    </services:CustomFrame>
+
+                    <services:CustomFrame
+                        Margin="0,8,0,8"
+                        Padding="25,8,15,12"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="300">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="รหัสผ่าน" TextColor="#000" />
+                                <ImageButton
+                                    x:Name="btnPass"
+                                    Padding="3"
+                                    BackgroundColor="Transparent"
+                                    Clicked="btnPassClick"
+                                    HorizontalOptions="EndAndExpand"
+                                    Source="pen.png"
+                                    VerticalOptions="StartAndExpand"
+                                    WidthRequest="20" />
+                            </StackLayout>
+
+                            <Label
+                                x:Name="labPass"
+                                Text="********"
+                                TextColor="#000" />
+                            <Entry
+                                x:Name="entPass"
+                                Margin="-4,-10,0,-11"
+                                FontSize="14"
+                                IsPassword="True"
+                                IsVisible="false"
+                                Text="Clean Plus"
+                                TextColor="#000" />
+                        </StackLayout>
+                    </services:CustomFrame>
+
+                    <services:CustomFrame
+                        Margin="0,8,0,8"
+                        Padding="25,8,15,12"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="300">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="อีเมล" TextColor="#000" />
+                                <ImageButton
+                                    x:Name="btnEmail"
+                                    Padding="3"
+                                    BackgroundColor="Transparent"
+                                    Clicked="btnEmailClick"
+                                    HorizontalOptions="EndAndExpand"
+                                    Source="pen.png"
+                                    VerticalOptions="StartAndExpand"
+                                    WidthRequest="20" />
+                            </StackLayout>
+
+                            <Label
+                                x:Name="labEmail"
+                                Text="cleanPlus@email.com"
+                                TextColor="#000" />
+                            <Entry
+                                x:Name="entEmail"
+                                Margin="-4,-10,0,-11"
+                                FontSize="14"
+                                IsVisible="false"
+                                Keyboard="Email"
+                                Text="Clean Plus"
+                                TextColor="#000" />
+                        </StackLayout>
+                    </services:CustomFrame>
+
+                    <services:CustomFrame
+                        Margin="0,8,0,8"
+                        Padding="25,8,15,12"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="300">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="เบอร์โทรศัพท์มือถือ" TextColor="#000" />
+                                <ImageButton
+                                    x:Name="btnPhone"
+                                    Padding="3"
+                                    BackgroundColor="Transparent"
+                                    Clicked="btnPhoneClick"
+                                    HorizontalOptions="EndAndExpand"
+                                    Source="pen.png"
+                                    VerticalOptions="StartAndExpand"
+                                    WidthRequest="20" />
+                            </StackLayout>
+
+                            <Label
+                                x:Name="labPhone"
+                                Text="090-999-9999"
+                                TextColor="#000" />
+                            <Entry
+                                x:Name="entPhone"
+                                Margin="-4,-10,0,-11"
+                                FontSize="14"
+                                IsVisible="false"
+                                Keyboard="Telephone"
+                                Text="Clean Plus"
+                                TextColor="#000" />
+                        </StackLayout>
+                    </services:CustomFrame>
+
+                    <services:CustomFrame
+                        Margin="0,8,0,8"
+                        Padding="25,8,15,12"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="300">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="ที่อยู่"
+                                    TextColor="#000" />
+                                <ImageButton
+                                    x:Name="btnAddress"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Padding="3"
+                                    BackgroundColor="Transparent"
+                                    Clicked="btnAddressClick"
+                                    HorizontalOptions="EndAndExpand"
+                                    Source="pen.png"
+                                    VerticalOptions="StartAndExpand"
+                                    WidthRequest="20" />
+                            </StackLayout>
+
+                            <Label
+                                x:Name="labAddress"
+                                Grid.Row="1"
+                                Text="99 หมู่ 9 ตำบลท่าโพธิ์ อำเภอเมืองพิษณุโลก จังหวัดพิษณุโลก รหัสไปรษณีย์ 65000"
+                                TextColor="#000" />
+                            <Entry
+                                x:Name="entAddress"
+                                Grid.Row="1"
+                                Margin="-4,-10,0,-11"
+                                FontSize="14"
+                                IsVisible="false"
+                                Text="Clean Plus"
+                                TextColor="#000" />
+                        </StackLayout>
+                    </services:CustomFrame>
+
+                    <Button
+                        Margin="0,35,0,35"
+                        BackgroundColor="#18b7be"
+                        Clicked="OnSignoutClick"
+                        CornerRadius="45"
+                        FontSize="16"
+                        HeightRequest="60"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="ออกจากระบบ"
+                        TextColor="#000"
+                        WidthRequest="250">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0" Color="#178ca4" />
+                                <GradientStop Offset="1" Color="#18b7be" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

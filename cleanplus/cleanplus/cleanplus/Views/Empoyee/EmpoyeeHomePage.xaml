@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.Empoyee.EmpoyeeHomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    BackgroundColor="White"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="50,*">
+            <Frame Padding="0">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#178CA4" />
+                        <GradientStop Offset="1" Color="#18B7BE" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <StackLayout
+                    Grid.Row="0"
+                    Margin="10,0"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        x:Name="HeadName"
+                        FontFamily="Sarabun"
+                        FontSize="12"
+                        HorizontalOptions="StartAndExpand"
+                        TextColor="White"
+                        VerticalOptions="CenterAndExpand" />
+
+                    <ImageButton
+                        Margin="5,0"
+                        BackgroundColor="Transparent"
+                        Clicked="Alert"
+                        Source="notification.png"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="20" />
+                    <ImageButton
+                        Margin="5,0"
+                        BackgroundColor="Transparent"
+                        Clicked="Help"
+                        Source="question.png"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="20" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="OnSignoutClick"
+                        Source="logout.png"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="20" />
+                </StackLayout>
+            </Frame>
+
+
+            <Grid Grid.Row="1" RowDefinitions="10,*">
+                <BoxView
+                    Grid.Row="0"
+                    Margin="0,0,0,0"
+                    HeightRequest="10">
+                    <BoxView.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="#FFFEFE" />
+                            <GradientStop Offset="1" Color="White" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+
+                <CollectionView
+                    x:Name="Empoyee"
+                    Grid.Row="1"
+                    Margin="10,0,10,0"
+                    SelectionMode="None">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Margin="0" Padding="0">
+                                <services:CustomFrame
+                                    Margin="5,5,5,15"
+                                    Padding="-6"
+                                    CornerRadius="20"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="StartAndExpand">
+                                    <StackLayout HeightRequest="160" Orientation="Horizontal">
+                                        <Grid
+                                            Margin="10"
+                                            ColumnDefinitions="80,*"
+                                            HorizontalOptions="StartAndExpand"
+                                            RowDefinitions="*,*,*,*,30">
+                                            <Image
+                                                Grid.RowSpan="5"
+                                                Margin="18"
+                                                Source="userfake.png" />
+
+                                            <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                                <Label
+                                                    FontFamily="Sarabun"
+                                                    FontSize="12"
+                                                    Text="คุณ"
+                                                    TextColor="#161616" />
+                                                <Label
+                                                    FontFamily="Sarabun"
+                                                    FontSize="12"
+                                                    Text="{Binding User.Name}"
+                                                    TextColor="#161616" />
+                                            </StackLayout>
+
+                                            <StackLayout
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                Orientation="Horizontal">
+                                                <Label
+                                                    FontFamily="Sarabun"
+                                                    FontSize="12"
+                                                    Text="วันที่"
+                                                    TextColor="#161616" />
+
+                                                <Label
+                                                    FontFamily="Sarabun"
+                                                    FontSize="12"
+                                                    Text="{Binding Date}"
+                                                    TextColor="#161616" />
+                                            </StackLayout>
+
+                                            <StackLayout
+                                                Grid.Row="2"
+                                                Grid.Column="1"
+                                                Orientation="Horizontal">
+                                                <Label
+                                                    FontFamily="Sarabun"
+                                                    FontSize="12"
+                                                    Text="{Binding Time}"
+                                                    TextColor="#161616" />
+                                                <Label
+                                                    FontFamily="Sarabun"
+                                                    FontSize="12"
+                                                    Text="="
+                                                    TextColor="#161616" />
+                                                <Label
+                                                    FontFamily="Sarabun"
+                                                    FontSize="12"
+                                                    Text="{Binding Hour}"
+                                                    TextColor="#161616" />
+                                                <Label
+                                                    FontFamily="Sarabun"
+                                                    FontSize="12"
+                                                    Text="ชม."
+                                                    TextColor="#161616" />
+                                            </StackLayout>
+
+                                            <StackLayout
+                                                Grid.Row="3"
+                                                Grid.Column="1"
+                                                Orientation="Horizontal">
+                                                <Label
+                                                    FontFamily="Sarabun"
+                                                    FontSize="12"
+                                                    Text="จำนวน"
+                                                    TextColor="#161616" />
+                                                <Label
+                                                    FontFamily="Sarabun"
+                                                    FontSize="12"
+                                                    Text="{Binding Empoyee}"
+                                                    TextColor="#161616" />
+                                                <Label
+                                                    FontFamily="Sarabun"
+                                                    FontSize="12"
+                                                    Text="คน"
+                                                    TextColor="#161616" />
+                                            </StackLayout>
+
+                                            <Label
+                                                Grid.Row="4"
+                                                Grid.Column="1"
+                                                FontFamily="Sarabun"
+                                                FontSize="11"
+                                                Text="รายละเอียดเพิ่มเติม"
+                                                TextColor="#161616"
+                                                TextDecorations="Underline"
+                                                VerticalTextAlignment="End" />
+                                            <Button
+                                                Grid.Row="4"
+                                                Grid.Column="1"
+                                                BackgroundColor="Transparent"
+                                                Clicked="ToDetail"
+                                                CommandParameter="{Binding Id}" />
+                                        </Grid>
+                                        <Grid>
+                                            <ImageButton
+                                                Padding="20"
+                                                BackgroundColor="#179CAE"
+                                                Clicked="SuccessWork"
+                                                CommandParameter="{Binding Id}"
+                                                Source="checkmark.png"
+                                                WidthRequest="70" />
+
+                                            <Button
+                                                Padding="0,0,6,0"
+                                                BackgroundColor="#179CAE"
+                                                Clicked="WaitWork"
+                                                CommandParameter="{Binding Id}"
+                                                FontSize="11"
+                                                IsVisible="{Binding VisableWait}"
+                                                Text="กำลัง  ดำเนินการ"
+                                                TextColor="White"
+                                                WidthRequest="70" />
+
+                                            <Button
+                                                Padding="10"
+                                                BackgroundColor="#179CAE"
+                                                Clicked="GetWork"
+                                                CommandParameter="{Binding Id}"
+                                                FontSize="12"
+                                                IsVisible="{Binding VisableWork}"
+                                                Text="{Binding HomePrice}"
+                                                WidthRequest="70" />
+                                        </Grid>
+
+                                    </StackLayout>
+                                </services:CustomFrame>
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

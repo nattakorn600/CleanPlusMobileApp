@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Empoyee.EmpoyeePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame
+                Grid.Row="0"
+                Padding="25,7,25,0"
+                BackgroundColor="White"
+                HasShadow="False">
+                <Grid>
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="พนักงานของเรา"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="Start"
+                        Source="leftarrow.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+                </Grid>
+            </Frame>
+
+            <Grid Grid.Row="1" RowDefinitions="10,*">
+                <BoxView
+                    Grid.Row="0"
+                    Margin="0,0,-50,0"
+                    HeightRequest="10">
+                    <BoxView.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="#E9E9E9" />
+                            <GradientStop Offset="1" Color="#fffefe" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+
+                <StackLayout Grid.Row="1" Margin="15,20,15,20">
+                    <CollectionView x:Name="EmpoList">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Margin="0,10,0,10">
+                                    <Frame
+                                        Padding="15"
+                                        BorderColor="Black"
+                                        CornerRadius="20">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="0" />
+                                                <RowDefinition Height="20" />
+                                                <RowDefinition Height="20" />
+                                                <RowDefinition Height="20" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="70" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="80" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image
+                                                Grid.Row="0"
+                                                Grid.RowSpan="5"
+                                                Grid.Column="0"
+                                                Source="{Binding Image}"
+                                                VerticalOptions="Start" />
+                                            <Grid Grid.Row="1" Grid.Column="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="16" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label
+                                                    Grid.Column="0"
+                                                    FontSize="11"
+                                                    Text="ชื่อ"
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Grid.Column="1"
+                                                    FontSize="11"
+                                                    Text="{Binding Name}"
+                                                    TextColor="Black" />
+                                            </Grid>
+                                            <Grid Grid.Row="2" Grid.Column="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="45" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label
+                                                    Grid.Column="0"
+                                                    FontSize="11"
+                                                    Text="ตำแหน่ง "
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Grid.Column="1"
+                                                    FontSize="11"
+                                                    Text="{Binding Position}"
+                                                    TextColor="Black" />
+                                            </Grid>
+                                            <Grid Grid.Row="3" Grid.Column="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="20" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label
+                                                    Grid.Column="0"
+                                                    FontSize="11"
+                                                    Text="รีวิว "
+                                                    TextColor="Black" />
+                                                <Grid Grid.Column="1" ColumnDefinitions="15,15,15,15,15">
+                                                    <Image
+                                                        Grid.Column="0"
+                                                        BackgroundColor="Transparent"
+                                                        Source="{Binding Star1}" />
+                                                    <Image
+                                                        Grid.Column="1"
+                                                        BackgroundColor="Transparent"
+                                                        Source="{Binding Star2}" />
+                                                    <Image
+                                                        Grid.Column="2"
+                                                        BackgroundColor="Transparent"
+                                                        Source="{Binding Star3}" />
+                                                    <Image
+                                                        Grid.Column="3"
+                                                        BackgroundColor="Transparent"
+                                                        Source="{Binding Star4}" />
+                                                    <Image
+                                                        Grid.Column="4"
+                                                        BackgroundColor="Transparent"
+                                                        Source="{Binding Star5}" />
+                                                </Grid>
+                                            </Grid>
+
+                                            <Button
+                                                Grid.RowSpan="4"
+                                                Grid.Column="2"
+                                                Padding="0"
+                                                BackgroundColor="#2c96ac"
+                                                Clicked="ClickMore"
+                                                CommandParameter="{Binding Id}"
+                                                CornerRadius="20"
+                                                FontSize="12"
+                                                HeightRequest="30"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="เพิ่มเติม"
+                                                TextColor="White"
+                                                VerticalOptions="CenterAndExpand"
+                                                WidthRequest="70" />
+
+                                            <Grid
+                                                Grid.Row="4"
+                                                Grid.Column="1"
+                                                Grid.ColumnSpan="2"
+                                                ColumnDefinitions="*,50"
+                                                RowDefinitions="20,*">
+                                                <Label
+                                                    FontSize="13"
+                                                    Text="{Binding CommNumber}"
+                                                    TextColor="Black" />
+                                                <ImageButton
+                                                    x:Name="dropdownButton"
+                                                    Grid.Column="1"
+                                                    BackgroundColor="Transparent"
+                                                    Clicked="dropdownClicked"
+                                                    CommandParameter="{Binding Id}"
+                                                    HeightRequest="14"
+                                                    Rotation="{Binding Rotate}"
+                                                    Source="downarrow.png"
+                                                    VerticalOptions="EndAndExpand" />
+                                                <StackLayout
+                                                    Grid.Row="1"
+                                                    Grid.ColumnSpan="2"
+                                                    Margin="20,0,0,0"
+                                                    BindableLayout.ItemsSource="{Binding CommList}"
+                                                    IsVisible="{Binding CommentIsVisible}">
+                                                    <BindableLayout.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Label
+                                                                FontSize="9"
+                                                                Text="{Binding Comment}"
+                                                                TextColor="#555555" />
+                                                        </DataTemplate>
+                                                    </BindableLayout.ItemTemplate>
+                                                </StackLayout>
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

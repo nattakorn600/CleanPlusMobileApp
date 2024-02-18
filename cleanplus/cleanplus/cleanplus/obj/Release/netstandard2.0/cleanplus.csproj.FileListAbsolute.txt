@@ -1,0 +1,81 @@
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\bin\Release\netstandard2.0\cleanplus.deps.json
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\bin\Release\netstandard2.0\cleanplus.dll
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\bin\Release\netstandard2.0\ref\cleanplus.dll
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\bin\Release\netstandard2.0\cleanplus.pdb
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.csproj.AssemblyReference.cache
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\App.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\AppShell.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\FirstPage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Register\GotPassPop.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Register\LoginPage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Register\RegisterPage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\SlidePage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\BookingPage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\AgreementPage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\ChatPage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\HelpPage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\PrivatePage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\QuestionPage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\StaffRulePage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\HomePage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\ProfilePage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\ServicePage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Shop\ShopPage.xaml.g.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.AssemblyInfoInputs.cache
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.AssemblyInfo.cs
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.csproj.CoreCompileInputs.cache
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\XamlC.stamp
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.dll
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\ref\cleanplus.dll
+C:\Users\msi-pc\Downloads\CleanplusNewEdit\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.pdb
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\bin\Release\netstandard2.0\cleanplus.deps.json
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\bin\Release\netstandard2.0\cleanplus.dll
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\bin\Release\netstandard2.0\ref\cleanplus.dll
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\bin\Release\netstandard2.0\cleanplus.pdb
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.csproj.AssemblyReference.cache
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\AdminShell.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\App.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\AppShell.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\EmpoyeeShell.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Admin\AdminChatPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Admin\AdminCheckOrderPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Admin\AdminHomePage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Admin\AdminOrderPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Admin\ChatAdminPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Admin\CheckDetailBillPaymentPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Empoyee\EmpoyeeAlertPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Empoyee\EmpoyeeDetailPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Empoyee\EmpoyeeHomePage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\FirstPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\LoadingPop.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Register\GotPassPop.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Register\LoginPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\Register\RegisterPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\SlidePage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\BookingPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Empoyee\EmpCerPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Empoyee\EmpoyeePage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\AgreementPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\ChatPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\HelpPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\PrivatePage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\QuestionPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Help\StaffRulePage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\HomePage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Notify\AlertPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Notify\CheckBillPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\ProfilePage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Service\CheckBillPagexaml.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Service\ServicePage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Shop\CartPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Shop\PaymentPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Shop\PointPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\Views\User\Shop\ShopPage.xaml.g.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.AssemblyInfoInputs.cache
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.AssemblyInfo.cs
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.csproj.CoreCompileInputs.cache
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\XamlC.stamp
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.dll
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\ref\cleanplus.dll
+C:\Users\Nitro-5\Desktop\CleanPlus\New update 19-08-2021\cleanplus\cleanplus\cleanplus\obj\Release\netstandard2.0\cleanplus.pdb

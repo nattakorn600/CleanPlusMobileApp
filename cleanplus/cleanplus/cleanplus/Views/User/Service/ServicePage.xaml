@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Service.ServicePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    BackgroundColor="#fffefe"
+    NavigationPage.HasNavigationBar="False"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid>
+            <!--  navigationbar  -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="45" />
+            </Grid.RowDefinitions>
+
+            <services:CustomFrame
+                Grid.Row="0"
+                Padding="0"
+                BackgroundColor="#FFF"
+                HasShadow="True"
+                HeightRequest="85"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <Grid>
+                    <ImageButton
+                        Margin="20,0,20,15"
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="StartAndExpand"
+                        Source="leftarrow.png"
+                        VerticalOptions="EndAndExpand"
+                        WidthRequest="25" />
+
+                    <Label
+                        Margin="0,0,0,15"
+                        FontSize="15"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="บริการทำความสะอาด"
+                        TextColor="#000"
+                        VerticalOptions="EndAndExpand" />
+                </Grid>
+            </services:CustomFrame>
+
+            <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Never">
+                <!--  startContent  -->
+                <StackLayout Margin="0,15,0,0">
+                    <Label
+                        Margin="30,0,30,0"
+                        FontFamily="Sarabun"
+                        FontSize="11"
+                        Text="กรุณาใส่ขนาดพื้นที่(ตร.ม) บ้าน/ห้องพักของท่าน"
+                        TextColor="Black" />
+
+                    <Label
+                        Margin="30,-9,30,0"
+                        FontFamily="Sarabun"
+                        FontSize="9"
+                        Text="* ใส่ขนาดพื้นที่(ตร.ม) ให้ใกล้เคียงมากที่สุด"
+                        TextColor="Red" />
+
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        Text="ตารางเมตร"
+                        TextColor="Black" />
+
+                    <!--  ตารางเมตร  -->
+                    <Frame
+                        Padding="8"
+                        CornerRadius="17"
+                        HorizontalOptions="Center"
+                        WidthRequest="65">
+                        <services:CustomEntryUnderline
+                            x:Name="squareMeter"
+                            Margin="0,0,8,0"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Keyboard="Numeric"
+                            MaxLength="5"
+                            Placeholder="0"
+                            PlaceholderColor="#2c96ac"
+                            TextColor="#2c96ac"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            WidthRequest="80" />
+                    </Frame>
+
+                    <Label
+                        Margin="30,15,30,0"
+                        FontFamily="Sarabun"
+                        FontSize="12"
+                        Text="คุณต้องการใช้บริการเมื่อไหร่"
+                        TextColor="Black" />
+
+                    <Grid Margin="30,0,30,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="180" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+
+                        <!--  วันที่  -->
+                        <Frame
+                            Grid.Column="0"
+                            Padding="0"
+                            CornerRadius="17"
+                            HorizontalOptions="Start"
+                            WidthRequest="179">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="30" />
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    x:Name="DatePickText"
+                                    FontSize="15"
+                                    HorizontalOptions="Center"
+                                    TextColor="#2c96ac"
+                                    VerticalOptions="Center" />
+                                <services:CustomDatePicker
+                                    x:Name="DatePick"
+                                    Date="{x:Static system:DateTime.Today}"
+                                    DateSelected="OnDateSelect"
+                                    FontSize="15"
+                                    Format="dd-MM-yyyy"
+                                    HorizontalOptions="Center"
+                                    MaximumDate="08/03/2061"
+                                    MinimumDate="08/03/2021"
+                                    TextColor="Transparent" />
+                                <Image
+                                    Grid.Column="1"
+                                    Margin="0,0,10,0"
+                                    Source="calendar.png" />
+                            </Grid>
+                        </Frame>
+
+                        <!--  เวลา  -->
+                        <Frame
+                            Grid.Column="1"
+                            Margin="15,0,0,0"
+                            Padding="0"
+                            CornerRadius="17"
+                            HorizontalOptions="Start"
+                            WidthRequest="120">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="27" />
+                                </Grid.ColumnDefinitions>
+                                <services:CustomTimePicker
+                                    x:Name="textTime"
+                                    FontSize="15"
+                                    Format="HH.mm"
+                                    HorizontalOptions="Center"
+                                    IsEnabled="{Binding}"
+                                    TextColor="#2c96ac" />
+                                <Image
+                                    Grid.Column="1"
+                                    Margin="0,0,5,0"
+                                    Source="clock.png" />
+                            </Grid>
+                        </Frame>
+                    </Grid>
+
+                    <Button
+                        Margin="0,15,0,0"
+                        BackgroundColor="#2c96ac"
+                        Clicked="calHour"
+                        CornerRadius="17"
+                        FontFamily="SaraBun"
+                        FontSize="15"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        Text="คำนวณชั่วโมง"
+                        TextColor="White"
+                        WidthRequest="175" />
+
+                    <!--  ชั่วโมง  -->
+                    <Frame
+                        Margin="0,15,0,0"
+                        Padding="8"
+                        CornerRadius="17"
+                        HorizontalOptions="Center"
+                        WidthRequest="65">
+                        <Label
+                            x:Name="textHour"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="0"
+                            TextColor="#2c96ac"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            WidthRequest="80" />
+                    </Frame>
+                    <Label
+                        Margin="30,5,0,0"
+                        FontFamily="Sarabun"
+                        FontSize="13"
+                        Text="อัตราค่าบริการ"
+                        TextColor="Black" />
+
+                    <Grid Margin="30,0,30,0">
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontFamily="Sarabun"
+                            FontSize="10"
+                            Text="คำนวณค่าบริการ"
+                            TextColor="Black" />
+
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            FontFamily="Sarabun"
+                            FontSize="10"
+                            Text="จำนวนพนักงาน"
+                            TextColor="Black" />
+
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            FontFamily="Sarabun"
+                            FontSize="10"
+                            Text="ยอดรวม"
+                            TextColor="Black" />
+
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            FontFamily="Sarabun"
+                            FontSize="10"
+                            HorizontalOptions="Start"
+                            Text="="
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <!--  คำนวนค่าบริการ  -->
+                        <Frame
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Padding="0"
+                            CornerRadius="17"
+                            HeightRequest="25"
+                            HorizontalOptions="End"
+                            WidthRequest="75">
+                            <Label
+                                x:Name="textBath"
+                                Margin="0,0,0,0"
+                                FontFamily="Sarabun"
+                                FontSize="10"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="0"
+                                TextColor="Black"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                        </Frame>
+
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            FontFamily="Sarabun"
+                            FontSize="10"
+                            HorizontalOptions="Start"
+                            Text="="
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <!--  จำนวนพนักงาน  -->
+                        <Frame
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Padding="0"
+                            CornerRadius="17"
+                            HeightRequest="25"
+                            HorizontalOptions="End"
+                            WidthRequest="75">
+                            <Label
+                                x:Name="textPerson"
+                                Margin="0,0,0,0"
+                                FontFamily="Sarabun"
+                                FontSize="10"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="0"
+                                TextColor="Black"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                        </Frame>
+
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            FontFamily="Sarabun"
+                            FontSize="10"
+                            HorizontalOptions="Start"
+                            Text="="
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <!--  ยอดรวม  -->
+                        <Frame
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Padding="0"
+                            CornerRadius="17"
+                            HeightRequest="25"
+                            HorizontalOptions="End"
+                            WidthRequest="75">
+                            <Label
+                                x:Name="textSum"
+                                Margin="0,0,0,0"
+                                FontFamily="Sarabun"
+                                FontSize="10"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="0"
+                                TextColor="Black"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                        </Frame>
+
+                        <Label
+                            x:Name="textShowCal"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontFamily="Sarabun"
+                            FontSize="10"
+                            HorizontalOptions="Center"
+                            Text="0 ตร.ม.X ฿20"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                    </Grid>
+
+                    <Frame
+                        Margin="25,15,25,0"
+                        Padding="5"
+                        BackgroundColor="#bbdce3"
+                        CornerRadius="10"
+                        HasShadow="False">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="95" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                            </Grid.ColumnDefinitions>
+
+                            <Frame
+                                Grid.Row="0"
+                                Grid.ColumnSpan="2"
+                                Padding="0"
+                                CornerRadius="10"
+                                HasShadow="False">
+                                <maps:Map
+                                    x:Name="map"
+                                    IsShowingUser="False"
+                                    MapClicked="OnMapClicked"
+                                    MapType="Street" />
+                            </Frame>
+
+                            <services:CustomRatio
+                                x:Name="btnRadio"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                BackgroundColor="Transparent"
+                                CheckedChanged="OnCheckRadioMap"
+                                HorizontalOptions="End"
+                                TextColor="#2c96ac"
+                                VerticalOptions="Center" />
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontSize="11"
+                                HorizontalOptions="Start"
+                                Text="ที่อยู่ปัจจุบัน"
+                                TextColor="Black"
+                                VerticalOptions="Start" />
+                            <Label
+                                x:Name="Proven"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontSize="9"
+                                HorizontalOptions="Start"
+                                Text="ไม่พบที่อยู่ปัจจุบัน"
+                                TextColor="Black"
+                                VerticalOptions="End" />
+                        </Grid>
+                    </Frame>
+
+                    <StackLayout
+                        Margin="0,10,0,20"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+
+                        <Label
+                            FontFamily="Sarabun"
+                            FontSize="10"
+                            Text="หมายเหตุ :"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                        <Frame
+                            Grid.Column="1"
+                            Margin="2"
+                            Padding="5"
+                            CornerRadius="17"
+                            HorizontalOptions="CenterAndExpand"
+                            WidthRequest="200">
+                            <services:CustomEntryUnderline
+                                x:Name="NoteNa"
+                                Margin="0,0,8,0"
+                                FontFamily="Sarabun"
+                                FontSize="10"
+                                HorizontalTextAlignment="Center"
+                                Placeholder="หมายเหตุ"
+                                PlaceholderColor="Black"
+                                TextColor="Black"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                        </Frame>
+
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+            <Button
+                Grid.Row="2"
+                Margin="-6"
+                BackgroundColor="#2c96ac"
+                Clicked="OnNextPage"
+                FontSize="15"
+                Text="ถัดไป"
+                TextColor="White"
+                VerticalOptions="FillAndExpand" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

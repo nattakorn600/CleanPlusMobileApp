@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<services:CustomShell
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    x:Class="cleanplus.EmpoyeeShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:empoyee="clr-namespace:cleanplus.Views.Empoyee"
+    BackgroundColor="#178da4"
+    Shell.ForegroundColor="#1793A8">
+
+    <ShellItem FlyoutItemIsVisible="False" Route="EmpoyeeHomePage">
+        <ShellContent Title="EmpoyeeHomePage" ContentTemplate="{DataTemplate empoyee:EmpoyeeHomePage}" />
+    </ShellItem>
+
+</services:CustomShell>

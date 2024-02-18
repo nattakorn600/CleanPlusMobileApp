@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.Register.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:custom="clr-namespace:cleanplus.Controls"
+    BackgroundColor="#FFF"
+    NavigationPage.HasNavigationBar="false">
+
+    <StackLayout
+        Margin="30,0,30,0"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand">
+        <Label
+            Margin="0,0,0,50"
+            FontSize="20"
+            HorizontalOptions="CenterAndExpand"
+            Text="เข้าสู่ระบบ"
+            TextColor="#000" />
+        <custom:CustomEntry
+            Margin="0,0,0,25"
+            BorderColor="#000"
+            CornerRadius="45"
+            FontSize="14"
+            HeightRequest="50"
+            Placeholder="ชื่อผู้ใช้"
+            PlaceholderColor="#000"
+            Text="{Binding Name}"
+            TextColor="#000" />
+        <custom:CustomEntry
+            Margin="0,0,0,10"
+            BorderColor="#000"
+            CornerRadius="45"
+            FontSize="14"
+            HeightRequest="50"
+            IsPassword="True"
+            Placeholder="รหัสผ่าน"
+            PlaceholderColor="#000"
+            Text="{Binding Password}"
+            TextColor="#000" />
+        <Label
+            Margin="0,0,0,10"
+            FontSize="12"
+            HorizontalOptions="EndAndExpand"
+            Text="ลืมรหัสผ่าน"
+            TextColor="#000"
+            TextDecorations="Underline">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ForgotPassword" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Button
+            Margin="0,0,0,30"
+            BackgroundColor="#18b7be"
+            Clicked="OnLoginClick"
+            CornerRadius="45"
+            FontSize="14"
+            HeightRequest="50"
+            Text="เข้าสู่ระบบ"
+            TextColor="#000">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0" Color="#178da4" />
+                    <GradientStop Offset="1" Color="#18b7be" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Grid HorizontalOptions="CenterAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="172" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Column="0"
+                FontSize="12"
+                HorizontalOptions="EndAndExpand"
+                Text="ยังไม่ได้เป็นสมาชิก?"
+                TextColor="#000" />
+            <Label
+                Grid.Column="1"
+                FontSize="12"
+                HorizontalOptions="StartAndExpand"
+                Text="ลงทะเบียน"
+                TextColor="#51a9ba"
+                TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ToRegister" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

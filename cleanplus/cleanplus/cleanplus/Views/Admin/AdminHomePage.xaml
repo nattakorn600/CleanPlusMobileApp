@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.Admin.AdminHomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    BackgroundColor="White"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="50,*">
+            <Frame Padding="0">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#178CA4" />
+                        <GradientStop Offset="1" Color="#18B7BE" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <StackLayout
+                    Margin="10,0"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="12"
+                        HorizontalOptions="StartAndExpand"
+                        Text="คุณ ปริชญา สาเสียง"
+                        TextColor="White"
+                        VerticalOptions="CenterAndExpand" />
+
+                    <ImageButton
+                        Margin="5,0"
+                        BackgroundColor="Transparent"
+                        Clicked="Help"
+                        Source="question.png"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="20" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="OnSignoutClick"
+                        Source="logout.png"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="20" />
+                </StackLayout>
+            </Frame>
+            <CollectionView
+                x:Name="HomeAdmin"
+                Grid.Row="1"
+                Margin="10,10,10,0"
+                SelectionMode="None">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Margin="0" Padding="0">
+                            <services:CustomFrame
+                                Margin="5,5,5,15"
+                                Padding="20"
+                                CornerRadius="20"
+                                HeightRequest="120"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="StartAndExpand">
+                                <Grid ColumnDefinitions="80,*" RowDefinitions="30,30,50">
+                                    <Image
+                                        Grid.RowSpan="2"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Source="userfake.png"
+                                        VerticalOptions="StartAndExpand"
+                                        WidthRequest="40" />
+                                    <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                        <Label
+                                            FontFamily="Sarabun"
+                                            FontSize="12"
+                                            Text=" คุณ"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="Sarabun"
+                                            FontSize="12"
+                                            Text="{Binding User_Name}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Orientation="Horizontal">
+                                        <Label
+                                            FontFamily="Sarabun"
+                                            FontSize="12"
+                                            Text=" ได้ทำการชำระเงินจำนวน"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="Sarabun"
+                                            FontSize="12"
+                                            Text="{Binding PriceFormat}"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            FontFamily="Sarabun"
+                                            FontSize="12"
+                                            Text="฿"
+                                            TextColor="Black"
+                                            VerticalTextAlignment="Center" />
+                                    </StackLayout>
+
+                                    <Button
+                                        Grid.Row="2"
+                                        Grid.ColumnSpan="2"
+                                        Margin="20,0"
+                                        Padding="0"
+                                        Clicked="CheckDetailBillPayment"
+                                        CommandParameter="{Binding Id}"
+                                        CornerRadius="50"
+                                        FontFamily="Sarabun"
+                                        FontSize="12"
+                                        HeightRequest="35"
+                                        Text="ตรวจสอบรายการชำระเงิน"
+                                        TextColor="White"
+                                        VerticalOptions="EndAndExpand">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Offset="0" Color="#178CA4" />
+                                                <GradientStop Offset="1" Color="#18B7BE" />
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                </Grid>
+                            </services:CustomFrame>
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.Empoyee.EmpoyeeAlertPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="50,*">
+            <Grid ColumnDefinitions="35,*,55">
+                <Label
+                    Grid.Column="1"
+                    FontFamily="Sarabun-Regular"
+                    FontSize="15"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="การแจ้งเตือน"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+                <ImageButton
+                    Grid.Column="2"
+                    BackgroundColor="Transparent"
+                    Clicked="CancelClick"
+                    HorizontalOptions="StartAndExpand"
+                    Source="cancel.png"
+                    WidthRequest="20" />
+            </Grid>
+
+            <StackLayout
+                x:Name="HideNoti"
+                Grid.Row="1"
+                Margin="30"
+                Padding="30"
+                HeightRequest="200"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <services:CustomFrame
+                    Padding="1"
+                    CornerRadius="50"
+                    HasShadow="True"
+                    HeightRequest="70">
+                    <Label
+                        FontFamily="Sarabun-Light"
+                        FontSize="15"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="ยังไม่มีรายการ"
+                        TextColor="#565555"
+                        VerticalOptions="CenterAndExpand" />
+                </services:CustomFrame>
+            </StackLayout>
+
+            <CollectionView
+                x:Name="EmpoyeeAlert"
+                Grid.Row="1"
+                SelectionMode="None">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="20,10" Orientation="Vertical">
+                            <services:CustomFrame CornerRadius="15" HasShadow="True">
+                                <StackLayout Orientation="Vertical">
+                                    <Label
+                                        FontFamily="Sarabun"
+                                        FontSize="12"
+                                        Text="{Binding Emp_Name}"
+                                        TextColor="Black" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label
+                                            FontFamily="Sarabun"
+                                            FontSize="12"
+                                            Text=" ได้ตอบรับการทำงานของคุณ"
+                                            TextColor="Black" />
+                                        <Label
+                                            FontFamily="Sarabun"
+                                            FontSize="12"
+                                            Text="{Binding User_Name}"
+                                            TextColor="Black" />
+                                        <Label
+                                            FontFamily="Sarabun"
+                                            FontSize="12"
+                                            Text="ร่วมกับคุณ"
+                                            TextColor="Black" />
+                                    </StackLayout>
+
+                                </StackLayout>
+
+                            </services:CustomFrame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.Admin.CheckDetailBillPaymentPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    BackgroundColor="White"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="50,10,*">
+            <Frame
+                Padding="25,7,25,0"
+                BackgroundColor="White"
+                HasShadow="False">
+                <Grid>
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="ตรวจสอบการชำระเงิน"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="Start"
+                        Source="leftarrow.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+                </Grid>
+            </Frame>
+
+            <BoxView
+                Grid.Row="1"
+                Margin="0,0,-50,0"
+                HeightRequest="10">
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#E9E9E9" />
+                        <GradientStop Offset="1" Color="White" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+
+            <ScrollView Grid.Row="2">
+                <Grid RowDefinitions="*,120">
+                    <StackLayout Padding="10">
+                        <services:CustomFrame
+                            Margin="10,10"
+                            Padding="25,20,25,30"
+                            CornerRadius="20">
+                            <StackLayout Spacing="-2">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label
+                                        FontFamily="Sarabun"
+                                        FontSize="12"
+                                        Text="คุณ"
+                                        TextColor="Black" />
+                                    <Label
+                                        FontFamily="Sarabun"
+                                        FontSize="12"
+                                        Text="{Binding User_Name}"
+                                        TextColor="Black" />
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label
+                                        FontFamily="Sarabun"
+                                        FontSize="12"
+                                        Text="ได้ชำระเงินจำนวน"
+                                        TextColor="Black" />
+                                    <Label
+                                        FontFamily="Sarabun"
+                                        FontSize="12"
+                                        Text="{Binding PriceFormat}"
+                                        TextColor="Black" />
+                                    <Label
+                                        FontFamily="Sarabun"
+                                        FontSize="12"
+                                        Text="฿"
+                                        TextColor="Black" />
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label
+                                        FontFamily="Sarabun"
+                                        FontSize="12"
+                                        Text="วันที่"
+                                        TextColor="Black" />
+                                    <Label
+                                        FontFamily="Sarabun"
+                                        FontSize="12"
+                                        Text="{Binding Date}"
+                                        TextColor="Black" />
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label
+                                        FontFamily="Sarabun"
+                                        FontSize="12"
+                                        Text="{Binding Time}"
+                                        TextColor="Black" />
+                                </StackLayout>
+
+                                <!-- <StackLayout Orientation="Horizontal">
+                                <Label
+                                    FontFamily="Sarabun"
+                                    FontSize="17"
+                                    Text=" ชำระเงินจาก"
+                                    TextColor="Black" />
+                                <Label
+                                    FontFamily="Sarabun"
+                                    FontSize="17"
+                                    Text="ธ.กสิกรไทย"
+                                    TextColor="Black" />
+                                <Label
+                                    FontFamily="Sarabun"
+                                    FontSize="17"
+                                    Text=" ไปยัง"
+                                    TextColor="Black" />
+                                <Label
+                                    FontFamily="Sarabun"
+                                    FontSize="17"
+                                    Text="ธ.กสิกรไทย"
+                                    TextColor="Black" />
+                            </StackLayout>-->
+                            </StackLayout>
+                        </services:CustomFrame>
+
+                        <Image
+                            x:Name="ImagePayment"
+                            Margin="50,20,50,0"
+                            Source="{Binding Image}" />
+                    </StackLayout>
+
+                    <Grid Grid.Row="1" ColumnDefinitions="*,*">
+                        <Button
+                            Grid.Column="0"
+                            Margin="20,0,10,0"
+                            Clicked="CheckPass"
+                            CornerRadius="50"
+                            FontFamily="Sarabun"
+                            FontSize="12"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            Text="ชำระเงินสำเร็จ"
+                            TextColor="White"
+                            VerticalOptions="CenterAndExpand">
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <GradientStop Offset="0" Color="#178CA4" />
+                                    <GradientStop Offset="1" Color="#18B7BE" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                        <Button
+                            Grid.Column="1"
+                            Margin="10,0,20,0"
+                            Clicked="CheckFail"
+                            CommandParameter="{Binding Id}"
+                            CornerRadius="50"
+                            FontFamily="Sarabun"
+                            FontSize="12"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            Text="ชำระเงินไม่สำเร็จ"
+                            TextColor="White"
+                            VerticalOptions="CenterAndExpand">
+                            <Button.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <GradientStop Offset="0" Color="#178CA4" />
+                                    <GradientStop Offset="1" Color="#18B7BE" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="55,*">
+            <Frame Grid.Row="0" Padding="0">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#178CA4" />
+                        <GradientStop Offset="1" Color="#18B7BE" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <Grid Margin="10,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        FontFamily="Sarabun"
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="หน้าหลัก"
+                        TextColor="#FFF"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        Grid.Column="1"
+                        BackgroundColor="Transparent"
+                        Clicked="OnHelpClick"
+                        HorizontalOptions="StartAndExpand"
+                        Source="question.png"
+                        WidthRequest="20" />
+                    <ImageButton
+                        Grid.Column="2"
+                        BackgroundColor="Transparent"
+                        Clicked="OnAlertClick"
+                        HorizontalOptions="EndAndExpand"
+                        Source="notification.png"
+                        WidthRequest="20" />
+                </Grid>
+            </Frame>
+
+            <StackLayout Grid.Row="1">
+                <Grid>
+                    <CarouselView
+                        x:Name="Advert"
+                        Margin="15,20,15,0"
+                        HeightRequest="200"
+                        HorizontalOptions="CenterAndExpand"
+                        IndicatorView="indicatorView"
+                        VerticalOptions="StartAndExpand">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="5">
+                                    <Frame Padding="0" CornerRadius="15">
+                                        <Image Aspect="AspectFill" Source="{Binding image}" />
+                                    </Frame>
+                                </Frame>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+
+                    <IndicatorView
+                        x:Name="indicatorView"
+                        Margin="0,0,0,10"
+                        HorizontalOptions="Center"
+                        IndicatorColor="#ffffff"
+                        IndicatorSize="6"
+                        IndicatorsShape="Circle"
+                        SelectedIndicatorColor="#18b7be"
+                        VerticalOptions="EndAndExpand" />
+                </Grid>
+
+                <StackLayout Margin="18">
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="ServiceClick"
+                        Source="CleanService.png" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="GoToShop"
+                        Source="CleanPlusShop.png" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="EmpoyeeClick"
+                        Source="OurStaff" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

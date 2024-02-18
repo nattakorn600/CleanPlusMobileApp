@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Help.StaffRulePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    Shell.BackgroundColor="White"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame
+                Grid.Row="0"
+                Padding="25,7,25,0"
+                BackgroundColor="White"
+                HasShadow="False">
+                <Grid>
+                    <Label
+                        FontFamily="Sarabun"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="กฎระเบียบข้อบังคับพนักงาน"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="Start"
+                        Source="leftarrow.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+                </Grid>
+            </Frame>
+            <Grid Grid.Row="1" RowDefinitions="10,*">
+                <BoxView
+                    Grid.Row="0"
+                    Margin="0,0,-50,0"
+                    HeightRequest="10">
+                    <BoxView.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="#E9E9E9" />
+                            <GradientStop Offset="1" Color="#fffefe" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+                <ScrollView
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    VerticalScrollBarVisibility="Never">
+                    <StackLayout Margin="25,20,25,20">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            Text="หน้าที่รับผิดชอบของพนักงานทำความสะอาด"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <StackLayout Margin="20,5,0,0">
+                            <Label
+                                FontSize="12"
+                                Text="1. ดูแลความสะอาดพื้นในบริเวณที่รับผิดชอบให้มีความสะอาดตามมาตรฐานงาน"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="2. ทำความสะอาดซอกมุมในบริเวณที่รับผิดชอบให้มีความสะอาดตามมาตรฐานงาน"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="3. ทำความสะอาดโต๊ะ เก้าอี้ และเฟอร์นิเจอร์ ในบริเวณที่รับผิดชอบให้มีความสะอาดตามมาตรฐานงาน"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="4. ทำความสะอาดผนัง  ขอบผนัง เพดาน ในบริเวณที่รับผิดชอบให้มีความสะอาดตามมาตรฐานงาน"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="5. ทำความสะอาดกระจก  มู่ลี่ในบริเวณที่รับผิดชอบให้มีความสะอาดตามมาตรฐานงาน"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="6. ทำความสะอาดห้องน้ำในบริเวณที่รับผิดชอบให้มีความสะอาดตามมาตรฐานงาน"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="7. ปฏิบัติงานตามตารางงานที่หัวหน้าจัดให้อย่างถูกต้องตามลำดับ ปฏิบัติตามกฎระเบียบของบริษัทฯ อย่างถูกต้อง"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="8. ปฏิบัติตามกฎระเบียบเฉพาะของลูกค้าอย่างเคร่งครัด และต้องรักษามาตรฐานของงานอย่างเคร่งครัด"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                        </StackLayout>
+
+                        <Label
+                            Margin="0,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            Text="หลักความปลอดภัยในการใช้เครื่องมือและการใช้เคมีภัณฑ์"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <StackLayout Margin="20,5,0,0">
+                            <Label
+                                FontSize="12"
+                                Text="1. วางป้ายเตือนขณะปฏิบัติงานทุกครั้ง ตรวจเช็คอุปกรณ์ไฟฟ้าทุกชนิด เช่น ปลั๊กไฟ  สายไฟก่อนปฏิบัติงาน"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="2. สวมอุปกรณ์เพื่อความปลอดภัยในการทำงาน เช่น ถุงมือ หน้ากาก รองเท้าบูท"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="3. ห้ามฉีดน้ำยาลงบนพื้นผิว  เฟอร์นิเจอร์ต่าง ๆ ให้ฉีดลงบนผ้าเพื่อป้องกันการกระจายของน้ำยาลงบนพื้นพรม หรือไวนิล อันจะทำให้พื้นเสียหรือพื้นลื่นได้"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="4. ขณะใช้เครื่องที่มีระบบจานหมุน เช่น เครื่องขัดล้าง ระวังต้องให้สายไฟอยู่ด้านหลังเสมอ เพื่อให้มั่นใจว่าสายไฟไม่ติดเข้าไฟในแผ่นขัด หรือแปรงซึ่งจะทำให้เกิดอุบัติเหตุได้เคมีภัณฑ์"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="5. อ่านฉลากก่อนใช้น้ำยาทุกครั้ง และสวมถุงมือทุกครั้ง"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="6. ระมัดระวังเวลาเปิดฝาขวดน้ำยาไม่ให้น้ำยากระเด็นเข้าตา และถูกผิวหนัง ใช้อัตราส่วนการผสมน้ำยาที่ถูกต้อง เหมาะสมกับงานชนิดนั้น ไม่ผสมน้ำยาเคมีชนิดต่าง ๆ เข้าด้วยกัน ในการผสมน้ำยาเคมีให้เจือจางลง  ให้เทน้ำยาที่จะผสมลงในน้ำ เพื่อป้องกันน้ำยากระเด็นและเป็นฟอง ไม่ให้เทน้ำลงในน้ำยา"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="7. เลือกสวมอุปกรณ์เสริมที่เหมาะสมกับการทำงาน เพื่อความปลอดภัยทุกครั้ง เช่น รองเท้าบูท และอื่น ๆ"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="8. ไม่ขยี้ตา  ลูบหรือเกาผิวหนังขณะที่ใช้น้ำยา หากน้ำยากระเด็นเข้าตาหรือถูกผิวหนังให้ล้างออกด้วยน้ำสะอาดทันทีและปรึกษาแพทย์"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                        </StackLayout>
+
+                        <Label
+                            Margin="0,20,0,0"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            Text="ข้อห้ามของพนักงานทำความสะอาด"
+                            TextColor="#000"
+                            VerticalOptions="Start" />
+                        <StackLayout Margin="20,5,0,25">
+                            <Label
+                                FontSize="12"
+                                Text="1. ห้ามหยิบฉวย ขโมยทรัพย์สินของลูกค้าแม้เพียงเล็กน้อย หรือเห็นว่าสิ่งของนั้นด้อยค่าก็ตาม"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="2. ห้ามถือวิสาสะดื่มน้ำหรือกินอาหารของลูกค้า"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="3. ห้ามกล่าวตำหนิทรัพย์สิน สิ่งของ สภาพบ้าน อาคารของลูกค้า"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="4. ห้ามหยอกล้อกันหรือส่งเสียงดังขณะอยู่ในสถานที่ปฏิบัติงานของลูกค้า"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="5. ห้ามแสดงความรังเกียจ ความรำคาญต่อลูกค้า เช่น คนป่วย คนชรา เด็กหรือความจู้จี้ของลูกค้า"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="6. ห้ามแสดงความโกรธ หรือแสดงอาการไม่พึงพอใจต่อลูกค้าโดยเด็ดขาด"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="7. ห้ามเปิดเผยความลับของลูกค้า และห้ามนำสิ่งที่พบเห็นในสถานที่ของลูกค้าไปเปิดเผยภายนอกในทางที่เสื่อมเสีย"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                            <Label
+                                FontSize="12"
+                                Text="8. ห้ามพูดคุยโทรศัพท์ขณะปฏิบัติหน้าที่ หรือพูดคุยเฉพาะที่จำเป็นเท่านั้น ห้ามกล่าวคำ หรือกล่าวในเชิงว่า &quot;จะไม่รับผิดชอบ&quot; กับลูกค้าโดยเด็ดขาด"
+                                TextColor="#000"
+                                VerticalOptions="Start" />
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

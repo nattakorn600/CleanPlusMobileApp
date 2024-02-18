@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.BookingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    Shell.NavBarHasShadow="False"
+    Shell.NavBarIsVisible="False">
+    <Grid RowDefinitions="55,*">
+        <Frame Grid.Row="0" Padding="0">
+            <Frame.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0" Color="#178CA4" />
+                    <GradientStop Offset="1" Color="#18B7BE" />
+                </LinearGradientBrush>
+            </Frame.Background>
+
+            <Label
+                FontFamily="Sarabun"
+                FontSize="15"
+                HorizontalTextAlignment="Center"
+                Text="การจองของฉัน"
+                TextColor="White"
+                VerticalTextAlignment="Center" />
+        </Frame>
+
+        <Grid Grid.Row="1" Margin="0,-6,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24" />
+                </Grid.RowDefinitions>
+
+                <!--  Page1  -->
+                <Grid x:Name="BookPage" Grid.Row="1">
+                    <Grid.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Left" Swiped="OnFinish" />
+                    </Grid.GestureRecognizers>
+                    <StackLayout
+                        x:Name="HideNotiBookPage"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+                        <services:CustomFrame
+                            Padding="1"
+                            CornerRadius="50"
+                            HasShadow="True"
+                            HeightRequest="70"
+                            WidthRequest="300">
+                            <Label
+                                FontFamily="Sarabun-Light"
+                                FontSize="15"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="ยังไม่มีรายการ"
+                                TextColor="#565555"
+                                VerticalOptions="CenterAndExpand" />
+                        </services:CustomFrame>
+                    </StackLayout>
+
+                    <ScrollView x:Name="HideBooking" VerticalScrollBarVisibility="Never">
+                        <CollectionView
+                            x:Name="BookColection"
+                            Margin="0,10,0,0"
+                            SelectionChanged="OnSelect">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" />
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Padding="20,17,20,17" BackgroundColor="White">
+                                        <services:CustomFrame
+                                            Margin="0,-10"
+                                            CornerRadius="20"
+                                            HasShadow="True"
+                                            HorizontalOptions="Center">
+                                            <Grid
+                                                ColumnDefinitions="*,*"
+                                                RowDefinitions="1.5*,*,*,*,*,*"
+                                                RowSpacing="1">
+                                                <Label
+                                                    Grid.ColumnSpan="2"
+                                                    Margin="0,0,50,0"
+                                                    FontAttributes="Bold"
+                                                    FontSize="13"
+                                                    Text="รายละเอียดการจอง"
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Grid.Row="1"
+                                                    FontAttributes="Bold"
+                                                    FontSize="12"
+                                                    Text="ขนาดพื้นที่"
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Grid.Row="2"
+                                                    FontAttributes="Bold"
+                                                    FontSize="12"
+                                                    Text="กำหนดการ"
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Grid.Row="4"
+                                                    FontAttributes="Bold"
+                                                    FontSize="12"
+                                                    Text="การชำระเงิน"
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Grid.Row="5"
+                                                    FontAttributes="Bold"
+                                                    FontSize="12"
+                                                    Text="การตอบรับพนักงาน"
+                                                    TextColor="Black" />
+
+                                                <!--  binding  -->
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Grid.Column="1"
+                                                    FontSize="12"
+                                                    Text="{Binding TarangMate}"
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Grid.Row="2"
+                                                    Grid.Column="1"
+                                                    FontSize="12"
+                                                    Text="{Binding Date}"
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Grid.Row="3"
+                                                    Grid.Column="1"
+                                                    FontSize="12"
+                                                    Text="{Binding Time}"
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Grid.Row="4"
+                                                    Grid.Column="1"
+                                                    FontAttributes="Bold"
+                                                    FontSize="12"
+                                                    Text="{Binding Payment}"
+                                                    TextColor="Black" />
+                                                <Label
+                                                    Grid.Row="5"
+                                                    Grid.Column="1"
+                                                    FontAttributes="Bold"
+                                                    FontSize="12"
+                                                    Text="{Binding Confirm}"
+                                                    TextColor="Black" />
+                                            </Grid>
+                                        </services:CustomFrame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </ScrollView>
+                </Grid>
+
+                <!--  Page2  -->
+                <Grid x:Name="FinishPage" Grid.Row="1">
+                    <Grid.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Right" Swiped="OnBooking" />
+                    </Grid.GestureRecognizers>
+                    <StackLayout
+                        x:Name="HideNotiFinishPage"
+                        HorizontalOptions="CenterAndExpand"
+                        IsVisible="false"
+                        VerticalOptions="CenterAndExpand">
+                        <services:CustomFrame
+                            Padding="1"
+                            CornerRadius="50"
+                            HasShadow="True"
+                            HeightRequest="70"
+                            WidthRequest="300">
+                            <Label
+                                FontFamily="Sarabun-Light"
+                                FontSize="15"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="ยังไม่มีรายการ"
+                                TextColor="#565555"
+                                VerticalOptions="CenterAndExpand" />
+                        </services:CustomFrame>
+                    </StackLayout>
+
+                    <ScrollView x:Name="HideFinish" VerticalScrollBarVisibility="Never">
+                        <CollectionView x:Name="FinishShowList">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" />
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Padding="20,20,20,15">
+                                        <services:CustomFrame
+                                            Padding="15,10"
+                                            CornerRadius="15"
+                                            HasShadow="True">
+                                            <StackLayout Orientation="Vertical">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label
+                                                        FontAttributes="Bold"
+                                                        FontFamily="Sarabun-Light"
+                                                        FontSize="14"
+                                                        Text="{Binding Date}"
+                                                        TextColor="#178CA4" />
+                                                    <Label
+                                                        FontAttributes="Bold"
+                                                        FontFamily="Sarabun-Light"
+                                                        FontSize="14"
+                                                        Text="{Binding Time}"
+                                                        TextColor="#178CA4" />
+                                                </StackLayout>
+
+                                                <Label
+                                                    FontAttributes="Bold"
+                                                    FontFamily="Sarabun-Light"
+                                                    FontSize="12"
+                                                    Text="การทำความ สะอาดเสร็จสิ้นแล้ว ขอบคุณที่ใช้บริการ Clean Plus" />
+
+                                                <StackLayout Orientation="Vertical">
+                                                    <Grid ColumnDefinitions="85,18,18,18,18,18,*">
+                                                        <Label
+                                                            FontAttributes="Bold"
+                                                            FontFamily="Sarabun-Light"
+                                                            FontSize="14"
+                                                            Text="ให้คะแนน"
+                                                            TextColor="#178CA4" />
+
+                                                        <ImageButton
+                                                            x:Name="Star1"
+                                                            Grid.Column="1"
+                                                            BackgroundColor="Transparent"
+                                                            Clicked="Click_Star1"
+                                                            CommandParameter="{Binding Id}"
+                                                            IsEnabled="{Binding VisableComment}"
+                                                            Source="{Binding Star1}" />
+                                                        <ImageButton
+                                                            x:Name="Star2"
+                                                            Grid.Column="2"
+                                                            BackgroundColor="Transparent"
+                                                            Clicked="Click_Star2"
+                                                            CommandParameter="{Binding Id}"
+                                                            IsEnabled="{Binding VisableComment}"
+                                                            Source="{Binding Star2}" />
+                                                        <ImageButton
+                                                            x:Name="Star3"
+                                                            Grid.Column="3"
+                                                            BackgroundColor="Transparent"
+                                                            Clicked="Click_Star3"
+                                                            CommandParameter="{Binding Id}"
+                                                            IsEnabled="{Binding VisableComment}"
+                                                            Source="{Binding Star3}" />
+                                                        <ImageButton
+                                                            x:Name="Star4"
+                                                            Grid.Column="4"
+                                                            BackgroundColor="Transparent"
+                                                            Clicked="Click_Star4"
+                                                            CommandParameter="{Binding Id}"
+                                                            IsEnabled="{Binding VisableComment}"
+                                                            Source="{Binding Star4}" />
+                                                        <ImageButton
+                                                            x:Name="Star5"
+                                                            Grid.Column="5"
+                                                            BackgroundColor="Transparent"
+                                                            Clicked="Click_Star5"
+                                                            CommandParameter="{Binding Id}"
+                                                            IsEnabled="{Binding VisableComment}"
+                                                            Source="{Binding Star5}" />
+                                                    </Grid>
+
+                                                    <Grid ColumnDefinitions="85,*">
+                                                        <Label
+                                                            FontAttributes="Bold"
+                                                            FontFamily="Sarabun-Light"
+                                                            FontSize="14"
+                                                            Text="ความคิดเห็น"
+                                                            TextColor="#178CA4" />
+
+                                                        <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                                            <Frame
+                                                                Grid.Column="1"
+                                                                Padding="1"
+                                                                BackgroundColor="#F5F5F5"
+                                                                CornerRadius="17"
+                                                                HasShadow="False"
+                                                                HorizontalOptions="FillAndExpand"
+                                                                VerticalOptions="FillAndExpand">
+                                                                <services:CustomEntryUnderline
+                                                                    Grid.Column="0"
+                                                                    Grid.ColumnSpan="2"
+                                                                    FontSize="12"
+                                                                    HeightRequest="15"
+                                                                    IsEnabled="{Binding VisableComment}"
+                                                                    Text="{Binding Comment}" />
+                                                            </Frame>
+
+                                                            <Button
+                                                                Padding="3.5"
+                                                                BackgroundColor="#1793A8"
+                                                                Clicked="SendComment"
+                                                                CommandParameter="{Binding Id}"
+                                                                CornerRadius="20"
+                                                                FontFamily="Sarabun"
+                                                                FontSize="10"
+                                                                HeightRequest="28"
+                                                                HorizontalOptions="End"
+                                                                IsVisible="{Binding VisableComment}"
+                                                                Text="ส่ง"
+                                                                TextColor="White"
+                                                                VerticalOptions="CenterAndExpand"
+                                                                WidthRequest="40" />
+                                                        </StackLayout>
+                                                    </Grid>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </services:CustomFrame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </ScrollView>
+                </Grid>
+            </Grid>
+
+
+
+
+            <!--  Tab  -->
+            <Grid
+                Grid.Row="0"
+                BackgroundColor="#18B7BE"
+                HeightRequest="35"
+                VerticalOptions="Start">
+                <!--  tab1  -->
+                <Frame
+                    Grid.Column="0"
+                    Padding="0"
+                    BackgroundColor="Transparent">
+                    <Grid Margin="80,0,15,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="4" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontFamily="Sarabun-Light"
+                            FontSize="12"
+                            HorizontalOptions="Center"
+                            Text="การจอง"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+                        <BoxView
+                            x:Name="BookingIndtcator"
+                            Grid.Row="1"
+                            BackgroundColor="#ebd50d" />
+                    </Grid>
+                </Frame>
+                <Button
+                    Grid.Column="0"
+                    BackgroundColor="Transparent"
+                    Clicked="OnBooking" />
+                <!--  tab2  -->
+                <Frame
+                    Grid.Column="1"
+                    Padding="0"
+                    BackgroundColor="Transparent">
+                    <Grid Margin="15,0,80,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="4" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontFamily="Sarabun-Light"
+                            FontSize="12"
+                            HorizontalOptions="Center"
+                            Text="เสร็จสิ้น"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+                        <BoxView
+                            x:Name="FinishIndicator"
+                            Grid.Row="1"
+                            BackgroundColor="#ebd50d"
+                            IsVisible="false" />
+                    </Grid>
+                </Frame>
+                <Button
+                    Grid.Column="1"
+                    BackgroundColor="Transparent"
+                    Clicked="OnFinish" />
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="cleanplus.Views.User.Notify.CheckBillPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:cleanplus.Controls"
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+
+                <ScrollView Grid.Row="0" VerticalScrollBarVisibility="Never">
+                    <StackLayout
+                        Margin="20,10,20,0"
+                        Padding="10,5,10,5"
+                        VerticalOptions="Start">
+
+                        <!--  กรอบที่1 ข้อมูลการส่ง  -->
+                        <services:CustomFrame Padding="25,10,25,10" CornerRadius="20">
+                            <Grid RowDefinitions="*,*,auto" ColumnDefinitions="35" RowSpacing="0">
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="คุณ"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="เบอร์"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="ที่อยู่"
+                                    TextColor="Black" />
+                                <!--  Binding  -->
+                                <Label
+                                    x:Name="textName"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="Clean Plus"
+                                    TextColor="Black" />
+                                <Label
+                                    x:Name="textPhone"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="099-999-9999"
+                                    TextColor="Black" />
+                                <Label
+                                    x:Name="textAddress"
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="99 หมู่ 9 ตำบลท่าโพธิ์ อำเภอเมืองพิษณุโลก จังหวัดพิษณุโลก รหัสไปรษณีย์ 65000"
+                                    TextColor="Black" />
+                            </Grid>
+                        </services:CustomFrame>
+                        <!--  กรอบที่2 หัวข้อ  -->
+                        <services:CustomFrame
+                            Margin="0,5,0,5"
+                            Padding="20,3,20,3"
+                            CornerRadius="25"
+                            HorizontalOptions="Center">
+                            <Label
+                                FontFamily="Sarabun"
+                                FontSize="12"
+                                Text="รายละเอียดการจอง"
+                                TextColor="Black" />
+                        </services:CustomFrame>
+                        <!--  กรอบที่3 รายละเอียดการจอง  -->
+                        <services:CustomFrame Padding="20,10,20,20" CornerRadius="20">
+                            <Grid ColumnSpacing="0" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label
+                                    Grid.Row="0"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="ขนาดพื้นที่"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="1"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="กำหนดการ"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="3"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="ยอดรวม"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="4"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="ภาษีมูลค่าเพิ่ม 7%"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="5"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="ยอดรวมทั้งสิ้น"
+                                    TextColor="Black" />
+
+                                <!--  binding  -->
+
+                                <Label
+                                    x:Name="textTatang"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="ขนาดพื้นที่"
+                                    TextColor="#707070" />
+                                <Label
+                                    x:Name="textDate"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="กำหนดการ"
+                                    TextColor="#707070" />
+                                <Label
+                                    x:Name="textTime"
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="กำหนดการ"
+                                    TextColor="#707070" />
+                                <Label
+                                    x:Name="textPrice"
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="ยอดรวม"
+                                    TextColor="#707070" />
+                                <Label
+                                    x:Name="textVat"
+                                    Grid.Row="4"
+                                    Grid.Column="1"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="ภาษีมูลค่าเพิ่ม 7%"
+                                    TextColor="#707070" />
+                                <Label
+                                    x:Name="textSum"
+                                    Grid.Row="5"
+                                    Grid.Column="1"
+                                    FontFamily="Sarabun"
+                                    FontSize="12"
+                                    Text="ยอดรวมทั้งสิ้น"
+                                    TextColor="#707070" />
+                            </Grid>
+                        </services:CustomFrame>
+
+                        <!--  กรอบที่4 วิธีการชำระเงิน  -->
+                        <Frame Margin="2,5,2,10" CornerRadius="20">
+                            <StackLayout>
+                                <Label
+                                FontFamily="Sarabun"
+                                FontSize="13"
+                                Text="วิธีการชำระเงิน"
+                                TextColor="Black" />
+                                <StackLayout>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="60" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="promptpay.png" />
+                                        <Label
+                                        Grid.Column="1"
+                                        Margin="10,0,0,0"
+                                        FontFamily="Sarabun"
+                                        FontSize="13"
+                                        Text="PromptPay"
+                                        TextColor="Black"
+                                        VerticalOptions="Center" />
+                                        <ImageButton
+                                        x:Name="PromptArrow"
+                                        Grid.Column="2"
+                                        BackgroundColor="Transparent"
+                                        Clicked="PromptArrowClick"
+                                        HeightRequest="17"
+                                        HorizontalOptions="Center"
+                                        Source="downarrow.png"
+                                        VerticalOptions="Center" />
+                                    </Grid>
+
+                                    <Grid x:Name="PromptNumber" IsVisible="false">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="60" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="1" Margin="10,0,0,0">
+                                            <Label
+                                            FontFamily="Sarabun"
+                                            FontSize="11"
+                                            Text="089-5043640"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+                                            <Label
+                                            Grid.Row="1"
+                                            FontFamily="Sarabun"
+                                            FontSize="11"
+                                            Text="น.ส. ปาวีณา ยีภู่"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+                                        </Grid>
+
+                                        <Frame
+                                        Grid.Column="2"
+                                        Padding="5,0,5,0"
+                                        CornerRadius="20"
+                                        HasShadow="True"
+                                        HeightRequest="22"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center">
+
+                                            <Label
+                                            FontSize="11"
+                                            HorizontalOptions="Center"
+                                            Text="คัดลอก"
+                                            TextColor="Black"
+                                            VerticalOptions="Center">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="PromptCopy" />
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                        </Frame>
+                                    </Grid>
+
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="60" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                        HeightRequest="45"
+                                        HorizontalOptions="Center"
+                                        Source="bankpay.png"
+                                        VerticalOptions="Center" />
+                                        <Label
+                                        Grid.Column="1"
+                                        Margin="10,0,0,0"
+                                        FontFamily="Sarabun"
+                                        FontSize="13"
+                                        Text="Mobile Banking"
+                                        TextColor="Black"
+                                        VerticalOptions="Center" />
+                                        <ImageButton
+                                        x:Name="BankArrow"
+                                        Grid.Column="2"
+                                        BackgroundColor="Transparent"
+                                        Clicked="BankArrowClick"
+                                        HeightRequest="17"
+                                        HorizontalOptions="Center"
+                                        Source="downarrow.png"
+                                        VerticalOptions="Center" />
+                                    </Grid>
+
+                                    <Grid x:Name="BankNumber" IsVisible="false">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="60" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="1" Margin="10,0,0,0">
+                                            <Label
+                                            FontFamily="Sarabun"
+                                            FontSize="11"
+                                            Text="ธนาคารกรุงไทย"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+                                            <Label
+                                            Grid.Row="1"
+                                            FontFamily="Sarabun"
+                                            FontSize="11"
+                                            Text="857-0-61242-7"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+                                            <Label
+                                            Grid.Row="2"
+                                            FontFamily="Sarabun"
+                                            FontSize="11"
+                                            Text="น.ส. ปาวีณา ยีภู่"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+
+                                            <Label
+                                            Grid.Row="4"
+                                            FontFamily="Sarabun"
+                                            FontSize="11"
+                                            Text="ธนาคารกสิกร"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+                                            <Label
+                                            Grid.Row="5"
+                                            FontFamily="Sarabun"
+                                            FontSize="11"
+                                            Text="044-1-90076-7"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+                                            <Label
+                                            Grid.Row="6"
+                                            FontFamily="Sarabun"
+                                            FontSize="11"
+                                            Text="น.ส. ปาวีณา ยีภู่"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+                                        </Grid>
+
+                                        <Grid Grid.Column="2">
+                                            <Frame
+                                            Grid.Row="0"
+                                            Padding="5,0,5,0"
+                                            CornerRadius="20"
+                                            HasShadow="True"
+                                            HeightRequest="22"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center">
+
+                                                <Label
+                                                FontSize="11"
+                                                HorizontalOptions="Center"
+                                                Text="คัดลอก"
+                                                TextColor="Black"
+                                                VerticalOptions="Center">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="KrungCopy" />
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                            </Frame>
+
+                                            <Frame
+                                            Grid.Row="1"
+                                            Padding="5,0,5,0"
+                                            CornerRadius="20"
+                                            HasShadow="True"
+                                            HeightRequest="22"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center">
+
+                                                <Label
+                                                FontSize="11"
+                                                HorizontalOptions="Center"
+                                                Text="คัดลอก"
+                                                TextColor="Black"
+                                                VerticalOptions="Center">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="KasiCopy" />
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                            </Frame>
+                                        </Grid>
+                                    </Grid>
+
+                                    <Frame
+                                    Margin="0,20,0,15"
+                                    Padding="15"
+                                    CornerRadius="20"
+                                    HorizontalOptions="Center">
+                                        <Label
+                                        HorizontalOptions="Center"
+                                        Text="อัพโหลดหลักฐานการชำระ"
+                                        TextColor="#2c96ac" FontSize="11"
+                                        VerticalOptions="Center" />
+                                    </Frame>
+
+                                    <Frame
+                                    x:Name="FrameUpImage"
+                                    Padding="20,10,20,5"
+                                    CornerRadius="20"
+                                    HorizontalOptions="Center">
+                                        <ImageButton
+                                        BackgroundColor="Transparent"
+                                        Clicked="SelectImage"
+                                        HeightRequest="60"
+                                        Source="upload.png" />
+                                    </Frame>
+
+                                    <Frame
+                                    x:Name="FrameImageUp"
+                                    Padding="0"
+                                    CornerRadius="20"
+                                    HasShadow="False"
+                                    HorizontalOptions="Center">
+                                        <ImageButton
+                                        x:Name="ImageUp"
+                                        BackgroundColor="Transparent"
+                                        Clicked="SelectImage" />
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </ScrollView>
+                <Grid Grid.Row="1" BackgroundColor="#2c96ac" />
+            </Grid>
+
+            <!--  navigation header  -->
+            <Frame
+                Grid.Row="0"
+                Padding="0"
+                BackgroundColor="#FFF"
+                HasShadow="False">
+                <Grid Margin="25,7,25,0">
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        Clicked="BackButtonClick"
+                        HorizontalOptions="StartAndExpand"
+                        Source="leftarrow.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        Text="การชำระเงิน"
+                        TextColor="#000"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Frame>
+
+            <!--  ปุ่มเปลี่ยนหน้า  -->
+            <Button
+                x:Name="btnPayment"
+                Grid.Row="1"
+                BackgroundColor="#2c96ac"
+                Clicked="UpLoadData"
+                FontFamily="Sarabun"
+                FontSize="12"
+                HeightRequest="45"
+                Text="ยอดรวมทั้งสิ้น ฿ 856"
+                TextColor="White"
+                VerticalOptions="End" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

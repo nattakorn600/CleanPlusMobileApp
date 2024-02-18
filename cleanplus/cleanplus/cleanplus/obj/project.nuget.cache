@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "jlyzamP8CNx1ZJ2AbfcBMNcxQkh2P9CnORx3Wz+rCIdbq1QaM0GeKqhM/ki/KRiWp7Sbvke0Luc7AAsyI8wVBA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Nitro-5\\Desktop\\CleanPlus\\New update 23-08-2021\\cleanplus\\cleanplus\\cleanplus\\cleanplus.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nitro-5\\.nuget\\packages\\acr.userdialogs\\7.1.0.514\\acr.userdialogs.7.1.0.514.nupkg.sha512",
+    "C:\\Users\\Nitro-5\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Nitro-5\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Nitro-5\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Nitro-5\\.nuget\\packages\\rg.plugins.popup\\2.0.0.12\\rg.plugins.popup.2.0.0.12.nupkg.sha512",
+    "C:\\Users\\Nitro-5\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Nitro-5\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
+    "C:\\Users\\Nitro-5\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\Nitro-5\\.nuget\\packages\\xamarin.forms\\5.0.0.2083\\xamarin.forms.5.0.0.2083.nupkg.sha512",
+    "C:\\Users\\Nitro-5\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2083\\xamarin.forms.maps.5.0.0.2083.nupkg.sha512"
+  ],
+  "logs": []
+}
